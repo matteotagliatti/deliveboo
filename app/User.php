@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function types() {
         return $this->belongsToMany('App\Type');
     }
+
+    public function dishes(){
+        return $this->hasMany('App\Dish');
+    }
 }
