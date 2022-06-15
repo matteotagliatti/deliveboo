@@ -30,4 +30,5 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function() {
     Route::get('/dashboard', 'HomeController@index')->name('dashboard');
     Route::resource('dishes', 'DishController');
+    Route::get('/orders', 'OrderController@index')->name('orders');
 });

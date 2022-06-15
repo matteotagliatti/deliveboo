@@ -17,7 +17,7 @@
                         <h1>{{ $user->nome }}</h1>
 
                         <a href="/dishes" class="btn btn-primary">My Dishes</a>
-                        <span>My Order</span>
+                        <a href="/orders" class="btn btn-secondary">My Orders</a>
                     </div>
                 </div>
             </div>
