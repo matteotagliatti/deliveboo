@@ -8,13 +8,17 @@
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
                     <div class="card-body">
-                        @if (session('message'))
-                            <div class="col-12">
+                        <div class="col-12">
+                            @if (session('message'))
                                 <div class="alert alert-success">
                                     {{ session('message') }}
                                 </div>
-                            </div>
-                        @endif
+                            @elseif (session('delete-message'))
+                                <div class="alert alert-danger">
+                                    {{ session('delete-message') }}
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
