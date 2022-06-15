@@ -27,9 +27,7 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-
-Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-
 Route::middleware('auth')->group(function() {
+    Route::get('/dashboard', 'HomeController@index')->name('dashboard');
     Route::resource('dishes', 'DishController');
 });
