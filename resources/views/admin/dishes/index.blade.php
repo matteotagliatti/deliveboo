@@ -45,8 +45,14 @@
                             <td>{{ $dish->prezzo }}</td>
                             <td>{{ $dish->visibilita ? 'Si' : 'No' }}</td>
                             <td>
-                                <a href="#" class="btn btn-secondary">Modifica</a>
-                                <a href="#" class="btn btn-danger">Elimina</a>
+                                <a href="{{ route('dishes.edit', $dish) }}" class="btn btn-secondary">Modifica</a>
+
+                                <form action="{{ route('dishes.destroy', $dish) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" class="btn btn-danger">Elimina</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

@@ -65,9 +65,9 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dish $dish)
     {
-        //
+        return view('admin.dishes.edit', compact('dish'));
     }
 
     /**
@@ -77,9 +77,15 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Dish $dish)
     {
-        //
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+
+        $dish->fill($data);
+        $dish->save();
+
+        return redirect()->route('dishes.index')->with('message', 'Piatto aggiornato con successo');
     }
 
     /**
@@ -88,8 +94,10 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+        return redirect()->route('dishes.index')->with('message', 'Piatto eliminato con successo');
+        
     }
 }
