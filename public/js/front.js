@@ -12805,9 +12805,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 var app = new Vue({
-  el: '#root',
+  el: "#root",
   render: function render(h) {
-    return _views_App__WEBPACK_IMPORTED_MODULE_0__["default"];
+    return h(_views_App__WEBPACK_IMPORTED_MODULE_0__["default"]);
   }
 });
 
@@ -12889,7 +12889,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/luca/Desktop/deliveboo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\X95\Code\deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

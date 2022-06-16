@@ -86,9 +86,12 @@
             <div class="title m-b-md">
                 Homepage
             </div>
+            <div id="root">
+
+            </div>
         </div>
     </div>
-    <script src="{{asset('js/front.js')}}"></script>
+    <script src="{{ asset('js/front.js') }}"></script>
 </body>
 
 </html>
