@@ -94,6 +94,18 @@ class DishController extends Controller
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
 
+        $this->validate($request, [
+            'nome' => 'required|string|max:100',
+            'descrizione' => 'required|max:250|min:5',
+            'ingredienti' => 'required|max:250',
+            'prezzo' => 'numeric|required',
+        ], [
+            'nome.max' => 'Il nome è troppo lungo',
+            'descrizione.max' => 'La descrizione è troppo lunga',
+            'descrizione.min' => 'La descrizione è troppo corta',
+            'ingredienti.max' => 'La descrizione è troppo lunga',
+        ]);
+
         $dish->fill($data);
         $dish->save();
 
