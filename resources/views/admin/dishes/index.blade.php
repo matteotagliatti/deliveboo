@@ -47,7 +47,7 @@
                             <td>{{ $dish->descrizione }}</td>
                             <td>{{ $dish->ingredienti }}</td>
                             <td>{{ $dish->prezzo }}</td>
-                            <td>{{ $dish->visibilita ? 'Si' : 'No' }}</td>
+                            <td>{{ $dish->visibilita ? '✓' : 'X' }}</td>
                             <td>
                                 <a href="{{ route('dishes.edit', $dish) }}" class="btn btn-secondary">Modifica</a>
 
