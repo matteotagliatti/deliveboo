@@ -55,8 +55,10 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger">Elimina</button>
+                                    <button id="elimina" type="submit" class="btn btn-danger">Elimina</button>
                                 </form>
+
+                                {{-- <a class="btn btn-danger">Elimina Bella</a> --}}
                             </td>
                         </tr>
                     @endforeach
@@ -67,4 +69,37 @@
 @endsection
 
 
-@dump($dishes)
+@section('script')
+    <script>
+        const btn = document.querySelectorAll('#elimina');
+        console.log(btn);
+
+        for (let i = 0; i < btn.length; i++) {
+            btn[i].addEventListener('click', function(event) {
+                event.preventDefault();
+                const form = event.target.form;
+
+                swal({
+                        title: "Sei sicuro?",
+                        text: "Una volta eliminato non sarà più possibile recuperarlo.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            setTimeout(() => {
+                                form.submit();
+                            }, 800);
+                            swal("Poof! Il tuo piatto è stato eliminato!", {
+                                icon: "success",
+                                buttons: false,
+                            });
+                        }
+                    });
+
+
+            })
+        }
+    </script>
+@endsection
