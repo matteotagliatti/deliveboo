@@ -4,8 +4,9 @@
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-8">
+
                 <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
+                    <div class="card-header">{{ __('Messaggi di sistema') }}</div>
 
                     <div class="card-body">
                         <div class="col-12">
@@ -24,7 +25,11 @@
             </div>
         </div>
         <div class="row">
-            <a href="/dishes/create" class="btn btn-primary">Aggiungi piatto</a>
+            <div class="col-12 d-flex justify-content-between align-items-center">
+                <h1>I tuoi piatti</h1>
+                <a href="/dishes/create" class="btn btn-primary">Aggiungi piatto</a>
+            </div>
+
         </div>
         <div class="row">
             <table class="table">
@@ -49,13 +54,14 @@
                             <td>{{ $dish->prezzo }}</td>
                             <td>{{ $dish->visibilita ? '✓' : 'X' }}</td>
                             <td>
-                                <a href="{{ route('dishes.edit', $dish) }}" class="btn btn-secondary">Modifica</a>
+                                <a href="{{ route('dishes.edit', $dish) }}"
+                                    class="btn btn-sm btn-secondary mb-2">Modifica</a>
 
                                 <form action="{{ route('dishes.destroy', $dish) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
 
-                                    <button id="elimina" type="submit" class="btn btn-danger">Elimina</button>
+                                    <button id="elimina" type="submit" class="btn btn-sm btn-danger">Elimina</button>
                                 </form>
 
                                 {{-- <a class="btn btn-danger">Elimina Bella</a> --}}

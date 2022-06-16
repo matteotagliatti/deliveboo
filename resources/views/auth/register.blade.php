@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+                    <div class="card-header">{{ __('Registrati') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
@@ -105,12 +105,13 @@
 
                             <div class="form-group row">
                                 <label for="immagine"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine (URL)') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="immagine" type="text"
+                                    <input id="immagine" type="url"
                                         class="form-control @error('immagine') is-invalid @enderror" name="immagine"
-                                        value="{{ old('immagine') }}" autocomplete="immagine" autofocus>
+                                        value="{{ old('immagine') }}" autocomplete="immagine" autofocus
+                                        placeholder="https://...">
 
                                     @error('immagine')
                                         <span class="invalid-feedback" role="alert">
