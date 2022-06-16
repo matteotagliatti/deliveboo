@@ -17,7 +17,7 @@ class TypesTableSeeder extends Seeder
 
         for ($i = 0; $i < 9; $i++) {
             $newType = new Type();
-            $newType->nome = $faker->randomElement($nomi);
+            $newType->nome = $faker->unique()->randomElement($nomi);
             $newType->save();
         }
     }
