@@ -50,9 +50,19 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nome' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'nome' => ['required', 'string', 'max:100'],
+            'indirizzo' => ['required', 'string', 'max:255'],
+            'P_IVA' => ['unique:users', 'required', 'string', 'min:13', 'max:13'],
+            'immagine' => ['nullable', 'string'],
+        ], [
+            'email.unique' => 'L\'email inserita è già in uso',
+            'password.confirmed' => 'Le password non corrispondono',
+            'password.min' => 'Le password deve essere di almeno 8 caratteri',
+            'P_IVA.unique' => 'La Partita IVA inserità è già in uso',
+            'P_IVA.min' => 'La Partita IVA deve essere di 13 caratteri',
+            'P_IVA.max' => 'La Partita IVA deve essere di 13 caratteri',
         ]);
     }
 

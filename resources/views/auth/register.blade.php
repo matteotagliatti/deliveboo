@@ -13,7 +13,7 @@
 
                             <div class="form-group row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo Mail*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -30,7 +30,7 @@
 
                             <div class="form-group row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -47,7 +47,7 @@
 
                             <div class="form-group row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="nome" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
+                                <label for="nome" class="col-md-4 col-form-label text-md-right">{{ __('Nome*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="nome" type="text" class="form-control @error('nome') is-invalid @enderror"
@@ -72,7 +72,7 @@
 
                             <div class="form-group row">
                                 <label for="indirizzo"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('indirizzo') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="indirizzo" type="text"
@@ -89,7 +89,7 @@
 
                             <div class="form-group row">
                                 <label for="P_IVA"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('P_IVA') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('P. IVA*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="P_IVA" type="text" class="form-control @error('P_IVA') is-invalid @enderror"
@@ -105,12 +105,12 @@
 
                             <div class="form-group row">
                                 <label for="immagine"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('immagine') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="immagine" type="text"
                                         class="form-control @error('immagine') is-invalid @enderror" name="immagine"
-                                        value="{{ old('immagine') }}" required autocomplete="immagine" autofocus>
+                                        value="{{ old('immagine') }}" autocomplete="immagine" autofocus>
 
                                     @error('immagine')
                                         <span class="invalid-feedback" role="alert">
