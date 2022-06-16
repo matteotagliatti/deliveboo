@@ -57,5 +57,3 @@
     </div>
 @endsection
 
-
-@dump($order)
