@@ -16,8 +16,8 @@
 
                         <h1>{{ $user->nome }}</h1>
 
-                        <a href="/dishes" class="btn btn-primary">My Dishes</a>
-                        <a href="/orders" class="btn btn-secondary">My Orders</a>
+                        <a href="/dishes" class="btn btn-primary">Piatti</a>
+                        <a href="/orders" class="btn btn-secondary">Ordini</a>
                     </div>
                 </div>
             </div>
