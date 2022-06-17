@@ -42,20 +42,21 @@
                     <tbody>
                         @foreach ($orders as $order)
                             <tr>
-                                <th scope="row">{{ $loop->index + 1 }}</th>
-                                <td scope="row">
-                                    @foreach ($order->dishes as $dish)
-                                        {{ $dish->nome }} ({{ $dish->pivot->quantita }}),
-                                    @endforeach
-                                </td>
-                                <td scope="row">{{ $order->prezzo }}</td>
-                                <td scope="row">{{ $order->indirizzo }}</td>
-                                <td scope="row">{{ $order->data_e_ora }}</td>
-                                <td scope="row">{{ $order->nome }}</td>
-                                <td scope="row">{{ $order->cognome }}</td>
-                                <td scope="row">{{ $order->telefono }}</td>
-                                <td scope="row">{{ $order->email }}</td>
-
+                                @foreach ($order->dishes as $dish)
+                                    @if($dish->user_id == Auth::user()->id)
+                                        <th scope="row">{{ $loop->index + 1 }}</th>
+                                        <td scope="row">
+                                            {{ $dish->nome }} ({{ $dish->pivot->quantita }}),
+                                        </td>
+                                        <td scope="row">{{ $order->prezzo }}</td>
+                                        <td scope="row">{{ $order->indirizzo }}</td>
+                                        <td scope="row">{{ $order->data_e_ora }}</td>
+                                        <td scope="row">{{ $order->nome }}</td>
+                                        <td scope="row">{{ $order->cognome }}</td>
+                                        <td scope="row">{{ $order->telefono }}</td>
+                                        <td scope="row">{{ $order->email }}</td>
+                                    @endif
+                                @endforeach
                             </tr>
                         @endforeach
                     </tbody>
