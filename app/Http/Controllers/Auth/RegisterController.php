@@ -60,6 +60,7 @@ class RegisterController extends Controller
             'indirizzo' => ['required', 'string', 'max:255'],
             'P_IVA' => ['unique:users', 'required', 'string', 'min:13', 'max:13'],
             'immagine' => ['nullable', 'string'],
+            'types' => ['required'],
         ], [
             'email.unique' => 'L\'email inserita è già in uso',
             'password.confirmed' => 'Le password non corrispondono',
@@ -67,6 +68,7 @@ class RegisterController extends Controller
             'P_IVA.unique' => 'La Partita IVA inserità è già in uso',
             'P_IVA.min' => 'La Partita IVA deve essere di 13 caratteri',
             'P_IVA.max' => 'La Partita IVA deve essere di 13 caratteri',
+            'types.required' => 'Devi selezionare almeno una tipologia',
         ]);
     }
 
@@ -87,8 +89,7 @@ class RegisterController extends Controller
             'immagine' => $data['immagine'],
         ]);
 
-        $type = Type::select('id')->where('nome', '....')->fisrt();
-
+        $type = $data['type'];
         $user->types()->attach($type);
 
         return $user;
