@@ -32,7 +32,7 @@
                                     <tr>
                                         <th scope="row">{{ $order->id }}</th>
                                         <td scope="row">
-                                            {{ $dish->nome }} ({{ $dish->pivot->quantita }}),
+                                            {{ $dish->nome }} ({{ $dish->pivot->quantita }})
                                         </td>
                                         <td scope="row">{{ $order->prezzo }}</td>
                                         <td scope="row">{{ $order->indirizzo }}</td>
