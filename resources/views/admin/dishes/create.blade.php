@@ -16,7 +16,7 @@
 
                                 <div class="col-md-6">
                                     <input id="nome" type="nome" class="form-control @error('nome') is-invalid @enderror"
-                                        name="nome" value="{{ old('nome') }}" required autocomplete="nome">
+                                        name="nome" value="{{ old('nome') }}" required autocomplete="nome" placeholder="Inserire nome del piatto">
 
                                     @error('nome')
                                         <span class="invalid-feedback" role="alert">
@@ -29,12 +29,12 @@
 
                             <div class="form-group row">
                                 <label for="descrizione"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('descrizione*') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Descrizione*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="descrizione" type="descrizione"
                                         class="form-control @error('descrizione') is-invalid @enderror" name="descrizione"
-                                        required autocomplete="descrizione">
+                                        required autocomplete="descrizione" placeholder="Inserire descrizione del piatto">
 
                                     @error('descrizione')
                                         <span class="invalid-feedback" role="alert">
@@ -46,12 +46,12 @@
 
                             <div class="form-group row">
                                 <label for="ingredienti"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('ingredienti*') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Ingredienti*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="ingredienti" type="text"
                                         class="form-control @error('ingredienti') is-invalid @enderror" name="ingredienti"
-                                        value="{{ old('ingredienti') }}" required autocomplete="ingredienti" autofocus>
+                                        value="{{ old('ingredienti') }}" required autocomplete="ingredienti" autofocus placeholder="Inserire ingredienti">
 
                                     @error('ingredienti')
                                         <span class="invalid-feedback" role="alert">
@@ -63,12 +63,12 @@
 
                             <div class="form-group row">
                                 <label for="prezzo"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('prezzo*') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Prezzo*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="prezzo" type="number" min="1" max="40" step=".01"
                                         class="form-control @error('prezzo') is-invalid @enderror" name="prezzo"
-                                        value="{{ old('prezzo') }}" required autocomplete="prezzo" autofocus>
+                                        value="{{ old('prezzo') }}" required autocomplete="prezzo" autofocus placeholder="Inserire il prezzo">
 
                                     @error('prezzo')
                                         <span class="invalid-feedback" role="alert">
@@ -80,7 +80,7 @@
 
                             <div class="form-group row">
                                 <label for="visiblita"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('visiblità*') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('È visibile?*') }}</label>
 
                                 <div class="col-md-6">
                                     <div class="form-check">

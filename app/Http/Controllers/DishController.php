@@ -79,6 +79,11 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
+        foreach(Auth::user()->dishes as $user_dish){
+            if($dish->user_id != $user_dish['user_id']){
+                abort(403);
+            }
+        }
         return view('admin.dishes.edit', compact('dish'));
     }
 
@@ -122,6 +127,6 @@ class DishController extends Controller
     {
         $dish->delete();
         return redirect()->route('dishes.index')->with('delete-message', 'Il piatto ' . $dish['nome'] . ' ' . 'è eliminato con successo');
-        
+
     }
 }

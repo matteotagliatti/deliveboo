@@ -13,12 +13,12 @@
 
                             <div class="form-group row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo Mail*') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo E-Mail*') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email">
+
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                        name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="nome@prova.com">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
                                 <div class="col-md-6">
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password">
+                                        required autocomplete="new-password" placeholder="Inserire la password">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password">
+                                        name="password_confirmation" required autocomplete="new-password" placeholder="Confermare la password">
                                 </div>
                             </div>
 
@@ -61,9 +61,9 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Nome*') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="nome" type="text"
-                                        class="form-control @error('nome') is-invalid @enderror" name="nome"
-                                        value="{{ old('nome') }}" required autocomplete="nome" autofocus>
+
+                                    <input id="nome" type="text" class="form-control @error('nome') is-invalid @enderror"
+                                        name="nome" value="{{ old('nome') }}" required autocomplete="nome" autofocus placeholder="Inserire il nome">
 
                                     @error('nome')
                                         <span class="invalid-feedback" role="alert">
@@ -80,7 +80,7 @@
                                 <div class="col-md-6">
                                     <input id="indirizzo" type="text"
                                         class="form-control @error('indirizzo') is-invalid @enderror" name="indirizzo"
-                                        value="{{ old('indirizzo') }}" required autocomplete="indirizzo" autofocus>
+                                        value="{{ old('indirizzo') }}" required autocomplete="indirizzo" autofocus placeholder="Inserire l'indirizzo dell'attività">
 
                                     @error('indirizzo')
                                         <span class="invalid-feedback" role="alert">
@@ -95,9 +95,9 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('P. IVA*') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="P_IVA" type="text"
-                                        class="form-control @error('P_IVA') is-invalid @enderror" name="P_IVA"
-                                        value="{{ old('P_IVA') }}" required autocomplete="P_IVA" autofocus>
+
+                                    <input id="P_IVA" type="text" class="form-control @error('P_IVA') is-invalid @enderror"
+                                        name="P_IVA" value="{{ old('P_IVA') }}" required autocomplete="P_IVA" autofocus placeholder="Inserire la P. IVA">
 
                                     @error('P_IVA')
                                         <span class="invalid-feedback" role="alert">
@@ -151,7 +151,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                        {{ __('Registrati') }}
                                     </button>
                                 </div>
                             </div>

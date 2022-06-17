@@ -59,7 +59,7 @@
 
                             <div class="form-group row">
                                 <label for="descrizione"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('descrizione*') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Descrizione*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="descrizione" type="descrizione"
@@ -76,7 +76,7 @@
 
                             <div class="form-group row">
                                 <label for="ingredienti"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('ingredienti*') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Ingredienti*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="ingredienti" type="text"
@@ -93,7 +93,7 @@
 
                             <div class="form-group row">
                                 <label for="prezzo"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('prezzo*') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Prezzo*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="prezzo" type="number" min="1" max="40" step=".01"
@@ -110,7 +110,7 @@
 
                             <div class="form-group row">
                                 <label for="visiblita"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('visiblità*') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('È visibile?*') }}</label>
 
                                 <div class="col-md-6">
                                     @if ($dish->visibilita)
