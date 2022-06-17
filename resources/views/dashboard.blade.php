@@ -18,6 +18,8 @@
                         <h1>{{ $user->nome }}</h1>
                         <p>Indirizzo: <strong>{{ $user->indirizzo }}</strong></p>
                         <p>Partita IVA: {{ $user->P_IVA }}</p>
+                        <p>Categoria: {{ implode(', ', $user->types()->get()->pluck('nome')->toArray())}}</p>
+
 
                         <a href="/dishes" class="btn btn-primary">Piatti</a>
                         <a href="/orders" class="btn btn-secondary">Ordini</a>

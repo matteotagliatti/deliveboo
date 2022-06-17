@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Registrati') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('register', $user) }}">
                             @csrf
 
                             <div class="form-group row">
@@ -128,6 +128,15 @@
                                     </button>
                                 </div>
                             </div>
+
+                            @foreach ($types as $type)
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="{{$type->id}}" name="types[]">
+                                    <label class="form-check-label" for="types">
+                                        {{$type->nome}}
+                                    </label>
+                                  </div>
+                            @endforeach
                         </form>
                     </div>
                 </div>
@@ -135,3 +144,4 @@
         </div>
     </div>
 @endsection
+
