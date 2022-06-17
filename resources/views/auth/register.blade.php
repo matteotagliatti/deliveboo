@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Registrati') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('register', $user) }}">
                             @csrf
 
                             <div class="form-group row">
@@ -16,6 +16,7 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo E-Mail*') }}</label>
 
                                 <div class="col-md-6">
+
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                         name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="nome@prova.com">
 
@@ -56,9 +57,11 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="nome" class="col-md-4 col-form-label text-md-right">{{ __('Nome*') }}</label>
+                                <label for="nome"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Nome*') }}</label>
 
                                 <div class="col-md-6">
+
                                     <input id="nome" type="text" class="form-control @error('nome') is-invalid @enderror"
                                         name="nome" value="{{ old('nome') }}" required autocomplete="nome" autofocus placeholder="Inserire il nome">
 
@@ -92,6 +95,7 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('P. IVA*') }}</label>
 
                                 <div class="col-md-6">
+
                                     <input id="P_IVA" type="text" class="form-control @error('P_IVA') is-invalid @enderror"
                                         name="P_IVA" value="{{ old('P_IVA') }}" required autocomplete="P_IVA" autofocus placeholder="Inserire la P. IVA">
 
@@ -117,6 +121,29 @@
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="types"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Tipologie*') }}</label>
+
+                                <div class="col-md-6">
+                                    @foreach ($types as $type)
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="{{ $type->id }}"
+                                                name="type[]">
+                                            <label class="form-check-label" for="types">
+                                                {{ ucfirst($type->nome) }}
+                                            </label>
+                                        </div>
+                                    @endforeach
+
+                                    @error('types')
+                                        <div class="invalid-feedback d-block" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </div>
                                     @enderror
                                 </div>
                             </div>

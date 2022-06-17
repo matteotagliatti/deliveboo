@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\TypeUser;
 use App\User;
+use App\Type;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -23,6 +26,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    
 
     /**
      * Where to redirect users after registration.
@@ -56,6 +60,7 @@ class RegisterController extends Controller
             'indirizzo' => ['required', 'string', 'max:255'],
             'P_IVA' => ['unique:users', 'required', 'string', 'min:13', 'max:13'],
             'immagine' => ['nullable', 'string'],
+            'types' => ['required'],
         ], [
             'email.unique' => 'L\'email inserita è già in uso',
             'password.confirmed' => 'Le password non corrispondono',
@@ -63,6 +68,7 @@ class RegisterController extends Controller
             'P_IVA.unique' => 'La Partita IVA inserità è già in uso',
             'P_IVA.min' => 'La Partita IVA deve essere di 13 caratteri',
             'P_IVA.max' => 'La Partita IVA deve essere di 13 caratteri',
+            'types.required' => 'Devi selezionare almeno una tipologia',
         ]);
     }
 
@@ -74,7 +80,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'nome' => $data['nome'],
@@ -82,5 +88,18 @@ class RegisterController extends Controller
             'P_IVA' => $data['P_IVA'],
             'immagine' => $data['immagine'],
         ]);
+
+        $type = $data['type'];
+        $user->types()->attach($type);
+
+        return $user;
     }
+
+    public function chooseType(User $user){
+
+        $types = Type::all();
+
+        return view('auth.register', compact('types', 'user'));
+    }
+
 }
