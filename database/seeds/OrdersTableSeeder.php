@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Order;
+use App\User;
 
 class OrdersTableSeeder extends Seeder
 {
@@ -13,8 +14,11 @@ class OrdersTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        $user_ids = User::pluck('id')->toArray();
+
         for ($i = 0; $i < 20; $i++) {
             $newOrder = new Order();
+            $newOrder->user_id = $faker->randomElement($user_ids);
             $newOrder->prezzo = $faker->randomFloat(2, 10, 200);
             $newOrder->indirizzo = $faker->address();
             $newOrder->data_e_ora = $faker->date('Y-m-d') . " " . $faker->time('H:i:s');
