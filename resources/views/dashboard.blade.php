@@ -17,8 +17,10 @@
                         <img class="img-fluid mb-5" src="{{ $user->immagine }}" alt="{{ $user->nome }}">
                         <h1>{{ $user->nome }}</h1>
                         <p>Indirizzo: <strong>{{ $user->indirizzo }}</strong></p>
-                        <p>Partita IVA: {{ $user->P_IVA }}</p>
-                        <p>Categoria: {{ implode(', ', $user->types()->get()->pluck('nome')->toArray())}}</p>
+                        <p>Partita IVA: <strong>{{ $user->P_IVA }}</strong></p>
+                        <p>Tipologie:
+                            <strong>{{ ucfirst(implode(', ',$user->types()->get()->pluck('nome')->toArray())) }}</strong>
+                        </p>
 
 
                         <a href="/dishes" class="btn btn-primary">Piatti</a>

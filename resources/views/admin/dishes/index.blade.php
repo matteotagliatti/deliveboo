@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+
         <div class="row justify-content-center mb-5">
             <div class="col-md-8">
 
@@ -26,7 +27,11 @@
         </div>
         <div class="row">
             <div class="col-12 d-flex justify-content-between align-items-center">
-                <h1>I tuoi piatti</h1>
+                <div>
+                    <a href="/dashboard">
+                        &#8592; Ritorna alla Dashboard</a>
+                    <h1>I tuoi piatti</h1>
+                </div>
                 <a href="/dishes/create" class="btn btn-primary">Aggiungi piatto</a>
             </div>
 
