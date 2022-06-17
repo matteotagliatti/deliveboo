@@ -16,7 +16,8 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        /* $orders = Order::where('user_id', Auth::user()->id)->get(); */
         $orders = Order::all();
         return view('admin.orders.index', compact('orders'));
     }

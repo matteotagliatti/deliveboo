@@ -14,10 +14,10 @@ class DishOrderTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $dishes = Dish::all();
-        $ordersIds = Order::pluck('id')->toArray();
-        foreach ($dishes as $dish) {
-            $dish->orders()->sync($faker->randomElements($ordersIds, $faker->numberBetween(1, 3)));
+        $orders = Order::all();
+        $dishesIds = Dish::pluck('id')->toArray();
+        foreach ($orders as $order) {
+            $order->dishes()->sync($faker->randomElements($dishesIds, $faker->numberBetween(1, 3)));
         }
 
 

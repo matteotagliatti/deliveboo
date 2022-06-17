@@ -24,36 +24,44 @@
             </div>
         </div> --}}
         <div class="row">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Prezzo</th>
-                        <th scope="col">Indirizzo</th>
-                        <th scope="col">Data e Ora</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Cognome</th>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($orders as $order)
+            <div class="col-12">
+                <table class="table">
+                    <thead>
                         <tr>
-                            <th scope="row">{{ $loop->index + 1 }}</th>
-                            <td scope="row">{{ $order->prezzo }}</td>
-                            <td scope="row">{{ $order->indirizzo }}</td>
-                            <td scope="row">{{ $order->data_e_ora }}</td>
-                            <td scope="row">{{ $order->nome }}</td>
-                            <td scope="row">{{ $order->cognome }}</td>
-                            <td scope="row">{{ $order->telefono }}</td>
-                            <td scope="row">{{ $order->email }}</td>
-
+                            <th scope="col">#</th>
+                            <th scope="col">Piatti (Quantità)</th>
+                            <th scope="col">Prezzo</th>
+                            <th scope="col">Indirizzo</th>
+                            <th scope="col">Data e Ora</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Cognome</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Email</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($orders as $order)
+                            <tr>
+                                <th scope="row">{{ $loop->index + 1 }}</th>
+                                <td scope="row">
+                                    @foreach ($order->dishes as $dish)
+                                        {{ $dish->nome }} ({{ $dish->pivot->quantita }}),
+                                    @endforeach
+                                </td>
+                                <td scope="row">{{ $order->prezzo }}</td>
+                                <td scope="row">{{ $order->indirizzo }}</td>
+                                <td scope="row">{{ $order->data_e_ora }}</td>
+                                <td scope="row">{{ $order->nome }}</td>
+                                <td scope="row">{{ $order->cognome }}</td>
+                                <td scope="row">{{ $order->telefono }}</td>
+                                <td scope="row">{{ $order->email }}</td>
+
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
 @endsection
-

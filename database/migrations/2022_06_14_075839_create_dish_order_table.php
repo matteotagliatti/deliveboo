@@ -20,7 +20,7 @@ class CreateDishOrderTable extends Migration
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
 
-            $table->integer('quantità')->default(1);
+            $table->integer('quantita')->default(1);
         });
     }
 
