@@ -78,7 +78,6 @@
 @section('script')
     <script>
         const btn = document.querySelectorAll('#elimina');
-        console.log(btn);
 
         for (let i = 0; i < btn.length; i++) {
             btn[i].addEventListener('click', function(event) {
