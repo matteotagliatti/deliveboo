@@ -14,7 +14,11 @@
                             </div>
                         @endif
 
-                        <img class="img-fluid mb-5" src="{{ $user->immagine }}" alt="{{ $user->nome }}">
+                        @if (str_starts_with($user->immagine, 'https://') || str_starts_with($user->immagine, 'http://'))
+                            <img src="{{$user->immagine}}" class="img-fluid rounded-start mb-2" alt="{{ $user->nome }}">
+                        @else
+                            <img src="{{asset('storage/' . $user->immagine)}}" class="img-fluid rounded-start mb-2" alt="{{ $user->nome }}">
+                        @endif
                         <h1>{{ $user->nome }}</h1>
                         <p>Indirizzo: <strong>{{ $user->indirizzo }}</strong></p>
                         <p>Partita IVA: <strong>{{ $user->P_IVA }}</strong></p>
