@@ -26,7 +26,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($orders as $order)
+                        @forelse ($orders as $order)
                             <tr>
                                 <th scope="row">{{ $order->id }}</th>
                                 <td scope="row">
@@ -42,7 +42,11 @@
                                 <td scope="row">{{ $order->telefono }}</td>
                                 <td scope="row">{{ $order->email }}</td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td scope="row">Nessun ordine ricevuto.</td>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
