@@ -149,7 +149,7 @@
                                     @endforeach
 
                                     @error('types')
-                                        <div class="invalid-feedback d-block" role="alert">
+                                        <div class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </div>
                                     @enderror
@@ -173,17 +173,36 @@
 
 @section('script')
     <script>
+        /* Controllo Password */
         const password = document.getElementById('password');
         const passwordConfirm = document.getElementById('password-confirm');
 
         function validatePassword() {
-            console.log('prova');
             if (password.value !== passwordConfirm.value) {
                 passwordConfirm.setCustomValidity("Le password non corrispondono");
+            } else {
+                passwordConfirm.setCustomValidity("");
             }
         }
 
         password.onchange = validatePassword;
         passwordConfirm.onkeyup = validatePassword;
+
+        /* Controllo Partita IVA */
+        const piva = document.getElementById('P_IVA');
+
+        function checkPIVA() {
+            if (piva.value.length != 13) {
+                piva.setCustomValidity('La lunghezza della Partita IVA deve essere di 13 caratteri')
+            } else if (piva.value.substring(0, 2) != 'IT') {
+                piva.setCustomValidity('La Partita IVA deve inziare con IT')
+            } else if (isNaN(piva.value.substring(2))) {
+                piva.setCustomValidity('La Partita IVA deve contenere solo numeri dopo IT')
+            } else {
+                piva.setCustomValidity('')
+            }
+        }
+
+        piva.onchange = checkPIVA;
     </script>
 @endsection
