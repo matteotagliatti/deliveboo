@@ -102,6 +102,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   components: {}
@@ -599,10 +603,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h1", [_vm._v("Work in Progress")]),
-      _vm._v(" "),
-      _c("h2", [_vm._v("Sito in Costruzione")]),
+    return _c("div", { staticClass: "row mt-5" }, [
+      _c("div", { staticClass: "col-12 d-flex justify-content-center" }, [
+        _c("div", [
+          _c("h1", [_vm._v("Work in Progress")]),
+          _vm._v(" "),
+          _c("h2", [_vm._v("Sito in Costruzione")]),
+        ]),
+      ]),
     ])
   },
 ]
@@ -12889,7 +12897,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ekapr\Desktop\Boolean\deliveboo\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\X95\Code\deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
