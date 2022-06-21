@@ -37,6 +37,24 @@ body {
     gap: 2rem;
 }
 
+.overlay{
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.card{
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 18rem;
+}
+
 .my-grid-element {
     position: relative;
     background-color: #fafafa;
@@ -80,4 +98,28 @@ body {
 .row {
     margin-right: 0px;
     margin-left: 0px;
+}
+
+div#cta{
+    background-image: url('./img/banner_bg_desktop.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    height: 350px;
+    position: relative;
+
+    div#cta-text{
+        top: 50%;
+        z-index: 3;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+}
+
+div#order-now{
+    /* background-color: gainsboro; */
+
+    img{
+        height: 120px;
+    }
 }
