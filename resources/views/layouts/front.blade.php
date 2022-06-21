@@ -40,4 +40,5 @@
         @yield('content')
     </div>
     <script src="{{ asset('js/front.js') }}"></script>
+    <script src="https://kit.fontawesome.com/0548baee83.js" crossorigin="anonymous"></script>
 </body>

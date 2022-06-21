@@ -16,16 +16,29 @@
         <!-- Ristoranti -->
         <div class="row">
             <div class="col-12">
-                <div class="container">
-                    <h2 class="py-5 text-center">I migliori ristoranti</h2>
+                <div class="container py-5">
+                    <h2 class="text-center pb-3">I migliori ristoranti</h2>
                     <div class="my-grid">
-                        <div
-                            class="my-grid-element p-3"
+                        <a
+                            class="my-grid-element d-flex"
                             v-for="(restaurant, index) in firstRestaurants"
                             :key="index"
                         >
-                            <h3>{{ restaurant.nome }}</h3>
-                        </div>
+                            <img
+                                :src="restaurant.immagine"
+                                :alt="restaurant.nome"
+                            />
+                            <div class="p-4">
+                                <h3>{{ restaurant.nome }}</h3>
+                                <p>
+                                    Indirizzo:
+                                    <strong>{{ restaurant.indirizzo }}</strong>
+                                </p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -57,7 +70,7 @@ export default {
     },
     computed: {
         firstRestaurants() {
-            return this.restaurants.slice(0, 8);
+            return this.restaurants.slice(0, 4);
         },
     },
 };
