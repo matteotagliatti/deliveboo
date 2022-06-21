@@ -36,7 +36,7 @@
 
     </header>
 
-    <div class="content">
+    <div>
         @yield('content')
     </div>
     <script src="{{ asset('js/front.js') }}"></script>
