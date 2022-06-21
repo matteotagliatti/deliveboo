@@ -147,8 +147,8 @@
                                         </div>
                                     @endforeach
 
-                                    @error('types')
-                                        <div class="invalid-feedback" role="alert">
+                                    @error('type')
+                                        <div class="invalid-feedback d-block" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </div>
                                     @enderror
@@ -203,6 +203,5 @@
         }
 
         piva.onchange = checkPIVA;
-
     </script>
 @endsection
