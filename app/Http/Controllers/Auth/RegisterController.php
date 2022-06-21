@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -59,7 +60,7 @@ class RegisterController extends Controller
             'nome' => ['required', 'string', 'max:100'],
             'indirizzo' => ['required', 'string', 'max:255'],
             'P_IVA' => ['unique:users', 'required', 'string', 'min:13', 'max:13'],
-            'immagine' => ['nullable', 'string'],
+            'immagine' => ['nullable', 'image'],
             'type' => ['required'],
         ], [
             'email.unique' => 'L\'email inserita è già in uso',
@@ -84,9 +85,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'nome' => $data['nome'],
-             'indirizzo' => $data['indirizzo'],
+            'indirizzo' => $data['indirizzo'],
             'P_IVA' => $data['P_IVA'],
-            'immagine' => $data['immagine'],
+            'immagine' => Storage::put('uploads', $data['immagine']),
         ]);
 
         $type = $data['type'];

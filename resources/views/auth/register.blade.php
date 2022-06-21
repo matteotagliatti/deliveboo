@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Registrati') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register', $user) }}">
+                        <form method="POST" action="{{ route('register', $user) }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
@@ -117,13 +117,12 @@
 
                             <div class="form-group row">
                                 <label for="immagine"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine (URL)') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="immagine" type="url"
+                                    <input id="immagine" type="file" accept="image/*"
                                         class="form-control @error('immagine') is-invalid @enderror" name="immagine"
-                                        value="{{ old('immagine') }}" autocomplete="immagine" autofocus
-                                        placeholder="https://...">
+                                        value="{{ old('immagine') }}" autocomplete="immagine" autofocus>
 
                                     @error('immagine')
                                         <span class="invalid-feedback" role="alert">
@@ -204,5 +203,6 @@
         }
 
         piva.onchange = checkPIVA;
+
     </script>
 @endsection
