@@ -224,5 +224,9 @@ div#menu {
             box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
             transition: transform 0.2s ease-in-out;
         }
+
+        div.item.my-not-visible {
+            opacity: 0.3;
+        }
     }
 }

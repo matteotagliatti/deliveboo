@@ -19,6 +19,9 @@
                             class="item p-4"
                             v-for="(dish, index) in restaurant.dishes"
                             :key="index"
+                            :class="
+                                dish.visibilita == 0 ? 'my-not-visible' : ''
+                            "
                         >
                             <h3>{{ dish.nome }}</h3>
                             <p>Descrizione: {{ dish.descrizione }}</p>

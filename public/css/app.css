@@ -11173,3 +11173,7 @@ div#menu div.items div.item {
   transition: transform 0.2s ease-in-out;
 }
 
+div#menu div.items div.item.my-not-visible {
+  opacity: 0.3;
+}
+
