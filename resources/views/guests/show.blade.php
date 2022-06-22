@@ -8,7 +8,7 @@
     <div id="root">
 
     </div>
-@endsection;
+@endsection
 
 @section('script')
     <script src="{{ asset('js/front-show.js') }}"></script>

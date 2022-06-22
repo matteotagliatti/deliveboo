@@ -211,3 +211,18 @@ div#order-now {
         height: 120px;
     }
 }
+
+div#menu {
+    div.items {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2rem;
+
+        div.item {
+            background-color: #fafafa;
+            border-radius: 5px;
+            box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+            transition: transform 0.2s ease-in-out;
+        }
+    }
+}

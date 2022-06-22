@@ -1914,6 +1914,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
@@ -1924,16 +1960,16 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    console.log(id);
-    /* axios
-        .get(`/api/users/${id}`)
-        .then((response) => {
-            this.restaurant = response.data;
-            console.log(this.restaurant);
-        })
-        .catch((error) => {
-            console.log(error);
-        }); */
+    var _this = this;
+
+    var url = window.location.href;
+    var id = url.substring(url.lastIndexOf("/") + 1);
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/users/".concat(id)).then(function (response) {
+      _this.restaurant = response.data;
+      console.log(_this.restaurant);
+    })["catch"](function (error) {
+      console.log(error);
+    });
   }
 });
 
@@ -2422,9 +2458,71 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Show Vue")])
+  return _vm.restaurant
+    ? _c("div", [
+        _c(
+          "div",
+          { staticClass: "position-relative bg-dark", attrs: { id: "hero" } },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "text-center my-py-13 text-white position-absolute",
+                attrs: { id: "text-hero" },
+              },
+              [
+                _c("h1", [_vm._v(_vm._s(_vm.restaurant.nome))]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(_vm.restaurant.indirizzo))]),
+              ]
+            ),
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "row py-5", attrs: { id: "menu" } }, [
+          _c("div", { staticClass: "col-8" }, [
+            _c("div", { staticClass: "container" }, [
+              _c("h2", { staticClass: "mb-4" }, [_vm._v("Menu")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "items" },
+                _vm._l(_vm.restaurant.dishes, function (dish, index) {
+                  return _c("div", { key: index, staticClass: "item p-4" }, [
+                    _c("h3", [_vm._v(_vm._s(dish.nome))]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v("Descrizione: " + _vm._s(dish.descrizione)),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v("Ingredienti: " + _vm._s(dish.ingredienti)),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(dish.prezzo) + " €")]),
+                  ])
+                }),
+                0
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+        ]),
+      ])
+    : _vm._e()
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-4" }, [
+      _c("div", { staticClass: "container" }, [_c("h2", [_vm._v("Checkout")])]),
+    ])
+  },
+]
 render._withStripped = true
 
 
