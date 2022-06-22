@@ -11,7 +11,7 @@ body {
     font-family: Inter, sans-serif;
 }
 
-footer{
+footer {
     height: 500px;
     background-color: bisque;
 }
@@ -28,6 +28,10 @@ footer{
     gap: 3rem;
 }
 
+.mt-5rem {
+    margin-top: 5rem;
+}
+
 .my-py-13 {
     padding: 13rem 0;
 }
@@ -42,7 +46,7 @@ footer{
     gap: 2rem;
 }
 
-.overlay{
+.overlay {
     background-color: black;
     opacity: 0.5;
     position: absolute;
@@ -54,7 +58,7 @@ footer{
     border-radius: 5px;
 }
 
-.card{
+.my-card {
     border: none;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 18rem;
@@ -77,7 +81,7 @@ footer{
 }
 
 .custom-shape-divider-top-1655825834 .shape-fill {
-    fill: #FFFFFF;
+    fill: #ffffff;
 }
 
 .custom-shape-divider-bottom-1655826606 {
@@ -98,7 +102,7 @@ footer{
 }
 
 .custom-shape-divider-bottom-1655826606 .shape-fill {
-    fill: #FFFFFF;
+    fill: #ffffff;
 }
 
 span.capitalize {
@@ -106,37 +110,36 @@ span.capitalize {
     font-style: italic;
 }
 
-#myVideo{
+#myVideo {
     height: 600px;
     width: 100%;
     object-fit: none;
 }
 
-#text-hero{
+#text-hero {
     z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    span{
+    span {
         font-size: 3rem;
         color: #fff;
-        text-shadow: 
-        1px 0px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.2), 
-        2px 1px 1px rgba(0, 0, 0, 0.2), 1px 2px 1px rgba(0, 0, 0, 0.2),
-        3px 2px 1px rgba(0, 0, 0, 0.2), 2px 3px 1px rgba(0, 0, 0, 0.2),
-        4px 3px 1px rgba(0, 0, 0, 0.2), 3px 4px 1px rgba(0, 0, 0, 0.2),
-        5px 4px 1px rgba(0, 0, 0, 0.2), 4px 5px 1px rgba(0, 0, 0, 0.2),
-        6px 5px 1px rgba(0, 0, 0, 0.2), 5px 6px 1px rgba(0, 0, 0, 0.2),
-        7px 6px 1px rgba(0, 0, 0, 0.2);
+        text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.2),
+            0px 1px 1px rgba(0, 0, 0, 0.2), 2px 1px 1px rgba(0, 0, 0, 0.2),
+            1px 2px 1px rgba(0, 0, 0, 0.2), 3px 2px 1px rgba(0, 0, 0, 0.2),
+            2px 3px 1px rgba(0, 0, 0, 0.2), 4px 3px 1px rgba(0, 0, 0, 0.2),
+            3px 4px 1px rgba(0, 0, 0, 0.2), 5px 4px 1px rgba(0, 0, 0, 0.2),
+            4px 5px 1px rgba(0, 0, 0, 0.2), 6px 5px 1px rgba(0, 0, 0, 0.2),
+            5px 6px 1px rgba(0, 0, 0, 0.2), 7px 6px 1px rgba(0, 0, 0, 0.2);
     }
 
-    a{
+    a {
         font-size: 1.3rem;
     }
 }
 
-#hero{
+#hero {
     height: 600px;
 }
 
@@ -185,15 +188,15 @@ span.capitalize {
     margin-left: 0px;
 }
 
-div#cta{
-    background-image: url('./img/banner_bg_desktop.jpg');
+div#cta {
+    background-image: url("./img/banner_bg_desktop.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 5px;
     height: 350px;
     position: relative;
 
-    div#cta-text{
+    div#cta-text {
         top: 50%;
         z-index: 3;
         position: absolute;
@@ -201,10 +204,10 @@ div#cta{
     }
 }
 
-div#order-now{
+div#order-now {
     /* background-color: gainsboro; */
 
-    img{
+    img {
         height: 120px;
     }
 }
