@@ -9,3 +9,7 @@
 
     </div>
 @endsection
+
+@section('script')
+    <script src="{{ asset('js/front.js') }}"></script>
+@endsection

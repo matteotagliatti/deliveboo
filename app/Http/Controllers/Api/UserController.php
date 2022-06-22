@@ -38,7 +38,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::with('types')->findOrFail($id);
+        return response()->json($users);
     }
 
     /**

@@ -24,7 +24,12 @@ Auth::routes();
 }); */
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('guests.index');
+});
+
+
+Route::get('/{id}', function () {
+    return view('guests.show');
 });
 
 Route::get('register', 'Auth\RegisterController@chooseType')->name('register');

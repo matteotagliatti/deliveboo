@@ -88,6 +88,6 @@
             </div>
         </div>
     </footer>
-    <script src="{{ asset('js/front.js') }}"></script>
+    @yield('script')
     <script src="https://kit.fontawesome.com/0548baee83.js" crossorigin="anonymous"></script>
 </body>

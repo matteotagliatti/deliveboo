@@ -44,6 +44,7 @@
                     <h2 class="text-center pb-3">I migliori ristoranti</h2>
                     <div class="my-grid">
                         <a
+                            :href="restaurant.id"
                             class="my-grid-element d-flex"
                             v-for="(restaurant, index) in firstRestaurants"
                             :key="index"
