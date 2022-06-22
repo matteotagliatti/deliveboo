@@ -15,22 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-/* Route::middleware('auth')
-->namespace('Admin')
-->prefix('admin')
-->name('admin.')
-->group(function () {
-    Route::resource('users', 'UserController');
-}); */
-
-Route::get('/', function () {
-    return view('guests.index');
-});
-
-
-Route::get('/{id}', function () {
-    return view('guests.show');
-});
+Route::get('/', 'GuestController@index');
+Route::get('/{id}', 'GuestController@show');
+Route::post('/checkout', 'GuestController@checkout');
 
 Route::get('register', 'Auth\RegisterController@chooseType')->name('register');
 
