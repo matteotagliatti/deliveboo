@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'GuestController@index');
+Route::get('/cerca', 'GuestController@search');
 Route::get('/{id}', 'GuestController@show');
 Route::post('/checkout', 'GuestController@checkout');
 

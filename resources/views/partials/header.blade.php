@@ -3,7 +3,7 @@
         <a class="my-logo-text text-white font-weight-bold" href="/">DeliveBoo</a>
         <nav>
             <ul class="d-flex gap-2 list-unstyled">
-                <li><a class="text-white" href="#">Cerca</a></li>
+                <li><a class="text-white" href="/cerca">Cerca</a></li>
                 <li><a class="text-white" href="#">Ristoranti</a></li>
                 @if (Route::has('login'))
                     @auth

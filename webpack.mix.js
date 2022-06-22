@@ -15,3 +15,4 @@ mix.sass("resources/sass/app.scss", "public/css");
 mix.js("resources/js/admin.js", "public/js");
 mix.js("resources/js/front.js", "public/js");
 mix.js("resources/js/front-show.js", "public/js");
+mix.js("resources/js/front-search.js", "public/js");
