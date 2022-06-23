@@ -14,7 +14,7 @@
             </svg>
         </div>
         <div class="row mt-5rem">
-            <div class="col-4">
+            <div class="col-12 col-sm-4">
                 <ul class="list-unstyled">
                     <li>
                         <h3>Link</h3>
@@ -23,7 +23,7 @@
                     <li><a href="#">Ristoranti</a></li>
                 </ul>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-sm-4">
                 <ul class="list-unstyled">
                     <li>
                         <h3>Contatti</h3>
@@ -31,7 +31,7 @@
                     <li>email@email.com</li>
                 </ul>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-sm-4">
                 <ul class="list-unstyled">
                     <li>
                         <h3>Restiamo in contatto</h3>
