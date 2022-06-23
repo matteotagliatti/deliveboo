@@ -17,10 +17,12 @@
             <div class="col-12 col-sm-4">
                 <ul class="list-unstyled">
                     <li>
-                        <h3>Link</h3>
+                        <h3>Social</h3>
                     </li>
-                    <li><a href="#">Cerca</a></li>
-                    <li><a href="#">Ristoranti</a></li>
+                    <li><a class="h5" href="#"><i class="fab fa-facebook-square h2"></i> Facebook</a></li>
+                    <li><a class="h5" href="#"><i class="fab fa-twitter-square h2"></i> Twitter</a></li>
+                    <li><a class="h5" href="#"><i class="fab fa-linkedin h2"></i> Linkedin</a></li>
+
                 </ul>
             </div>
             <div class="col-12 col-sm-4">
@@ -28,19 +30,40 @@
                     <li>
                         <h3>Contatti</h3>
                     </li>
-                    <li>email@email.com</li>
+                    <li><i class="fas fa-house mb-3"></i> via G.Boole, 55 - Italy</li>
+                    <li><i class="fas fa-phone mb-3"></i> +39 XX-XXXXXX</li>
+                    <li><i class="fas fa-envelope"></i> info[at]deliveboo.it</li>
                 </ul>
+
             </div>
             <div class="col-12 col-sm-4">
                 <ul class="list-unstyled">
                     <li>
                         <h3>Restiamo in contatto</h3>
+                        <p>Invia la tua email per essere sempre aggiornato!</p>
                     </li>
                     <li>
                         <input type="email" name="email" id="email">
                         <input type="submit" value="Invia">
                     </li>
+                    <li>
+                       <div class="footer-image img-fluid"></div>
+                    </li>
+
                 </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-bar">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 mt-2">
+                    <p class="mb-0">Copyright © 2022 Deliveboo. All rights reserved.</p>
+                </div>
+                <div class="col-12 col-sm-6 text-right mt-2">
+                    <p class="mb-0">Made with <i class="fas fa-heart"></i> by <a href="#" target="_blank">dreamTeam #55</a></p>
+                </div>
             </div>
         </div>
     </div>

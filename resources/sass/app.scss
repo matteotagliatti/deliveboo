@@ -243,6 +243,7 @@ div#menu {
 // }
 
 nav {
+
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -250,8 +251,9 @@ nav {
     &.onScroll {
         box-shadow: 0 0 10px #aaa;
         background-color: #fff;
-        ul li {
-            color: #10b761;
+
+        ul li a{
+            color: #000 !important;
         }
     }
     ul {
@@ -263,9 +265,25 @@ nav {
             cursor: pointer;
             font-weight: 600;
             list-style-type: none;
-            color: white;
+            color:black !important;
+
+
+
         }
     }
+}
+
+.footer-image {
+    width:200px;
+    height: 200px;
+    background-size:contain;
+    background-image: url("../public/img/recipe-fast-delivery.png");
+}
+
+.copyright-bar{
+    width: 100vw;
+    height:35px;
+    background-color: rgb(100,190,121);
 }
 
 @include sm {

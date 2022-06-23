@@ -12,16 +12,16 @@ class GuestController extends Controller
     }
 
     public function show() {
-        $gateway = new \Braintree\Gateway([
-            'environment' => env('BRAINTREE_ENV'),
-            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
-            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
-            'privateKey' => env('BRAINTREE_PRIVATE_KEY')
-        ]);
+        // $gateway = new \Braintree\Gateway([
+        //     'environment' => env('BRAINTREE_ENV'),
+        //     'merchantId' => env('BRAINTREE_MERCHANT_ID'),
+        //     'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
+        //     'privateKey' => env('BRAINTREE_PRIVATE_KEY')
+        // ]);
 
-        $token = $gateway->ClientToken()->generate();
+        // $token = $gateway->ClientToken()->generate();
 
-        return view('guests.show', ['token' => $token]);
+        return view('guests.show');
     }
 
     public function checkout(Request $request)
@@ -32,22 +32,22 @@ class GuestController extends Controller
             'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
             'privateKey' => env('BRAINTREE_PRIVATE_KEY')
         ]);
-    
+
         $amount = $request->amount;
         $name = $request->name;
         $nonce = $request->payment_method_nonce;
-    
+
         $result = $gateway->transaction()->sale([
             'amount' => $amount,
             'paymentMethodNonce' => $nonce,
             'customer' => [
                 'firstName' => $name,
             ],
-        ]); 
-    
+        ]);
+
         if($result->success) {
-            $transaction = $result->transaction;    
-    
+            $transaction = $result->transaction;
+
             return view('checkout', [
                 'message' => "Transaction successful. The ID is' $transaction->id",
                 'amount' => $transaction->amount,

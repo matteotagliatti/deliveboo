@@ -11193,8 +11193,8 @@ nav.onScroll {
   background-color: #fff;
 }
 
-nav.onScroll ul li {
-  color: #10b761;
+nav.onScroll ul li a {
+  color: #000 !important;
 }
 
 nav ul {
@@ -11208,7 +11208,20 @@ nav ul li {
   cursor: pointer;
   font-weight: 600;
   list-style-type: none;
-  color: white;
+  color: black !important;
+}
+
+.footer-image {
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-image: url(/images/recipe-fast-delivery.png?9d5f3d3824ef9be09d7acd6d2aa27f99);
+}
+
+.copyright-bar {
+  width: 100vw;
+  height: 35px;
+  background-color: rgb(100, 190, 121);
 }
 
 @media (max-width: 480px) {
