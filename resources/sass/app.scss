@@ -229,4 +229,38 @@ div#menu {
             opacity: 0.3;
         }
     }
+
+
 }
+
+// .change_color {
+//    background-color: rgba(255, 255, 255, 0.0) !important;
+// }
+
+nav {
+
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    transition: all .4s ease-in-out;
+    &.onScroll {
+      box-shadow: 0 0 10px #aaa;
+      background-color: #fff;
+      ul li {
+        color: #10b761;
+      }
+    }
+    ul {
+      margin-left: 3em;
+      width: 25%;
+      display: flex;
+      justify-content: space-between;
+      li {
+        cursor: pointer;
+        font-weight: 600;
+        list-style-type: none;
+        color: white;
+      }
+    }
+  }
+

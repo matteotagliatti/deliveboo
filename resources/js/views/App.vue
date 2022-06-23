@@ -193,8 +193,10 @@ export default {
     data() {
         return {
             restaurants: [],
+
         };
     },
+
     mounted() {
         axios
             .get("/api/users")
@@ -205,7 +207,14 @@ export default {
             .catch((error) => {
                 console.log(error);
             });
+
+
+
+
     },
+
+
+
     computed: {
         firstRestaurants() {
             return this.restaurants.slice(0, 4);
