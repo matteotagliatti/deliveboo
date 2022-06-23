@@ -15,11 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'GuestController@index');
-Route::get('/cerca', 'GuestController@search');
-Route::get('/{id}', 'GuestController@show');
-Route::post('/checkout', 'GuestController@checkout');
-
 Route::get('register', 'Auth\RegisterController@chooseType')->name('register');
 
 Route::middleware('auth')->group(function() {
@@ -27,3 +22,8 @@ Route::middleware('auth')->group(function() {
     Route::resource('dishes', 'DishController');
     Route::get('/orders', 'OrderController@index')->name('orders');
 });
+
+Route::get('/', 'GuestController@index');
+Route::get('/cerca', 'GuestController@search');
+Route::get('/{id}', 'GuestController@show');
+Route::post('/checkout', 'GuestController@checkout');
