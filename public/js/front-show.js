@@ -1947,12 +1947,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
@@ -2484,7 +2478,7 @@ var render = function () {
         ),
         _vm._v(" "),
         _c("div", { staticClass: "row py-5", attrs: { id: "menu" } }, [
-          _c("div", { staticClass: "col-8" }, [
+          _c("div", { staticClass: "col-12" }, [
             _c("div", { staticClass: "container" }, [
               _c("h2", { staticClass: "mb-4" }, [_vm._v("Menu")]),
               _vm._v(" "),
@@ -2518,22 +2512,11 @@ var render = function () {
               ),
             ]),
           ]),
-          _vm._v(" "),
-          _vm._m(0),
         ]),
       ])
     : _vm._e()
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-4" }, [
-      _c("div", { staticClass: "container" }, [_c("h2", [_vm._v("Checkout")])]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -14817,7 +14800,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/luca/Desktop/deliveboo/resources/js/front-show.js */"./resources/js/front-show.js");
+module.exports = __webpack_require__(/*! C:\Users\X95\Code\deliveboo\resources\js\front-show.js */"./resources/js/front-show.js");
 
 
 /***/ })

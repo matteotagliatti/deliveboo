@@ -10990,6 +10990,10 @@ footer {
   font-size: 1.5rem;
 }
 
+header ul {
+  margin-bottom: 0 !important;
+}
+
 .my-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -11205,5 +11209,40 @@ nav ul li {
   font-weight: 600;
   list-style-type: none;
   color: white;
+}
+
+@media (max-width: 480px) {
+  header ul {
+    margin-left: 0;
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
+  }
+
+  header ul li a {
+    font-size: 1.1rem;
+  }
+
+  header .my-column-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .my-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  div#info-restaurant h3 {
+    font-size: 1rem;
+  }
+
+  div#info-restaurant h5 {
+    font-size: 0.7rem;
+  }
+
+  div#menu div.items {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 

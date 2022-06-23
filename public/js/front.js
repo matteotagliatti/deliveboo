@@ -2094,8 +2094,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
@@ -2689,7 +2687,7 @@ var render = function () {
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "p-4" },
+                    { staticClass: "p-4", attrs: { id: "info-restaurant" } },
                     [
                       _vm._l(restaurant.types, function (type, index) {
                         return _c(
@@ -2821,19 +2819,19 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "container pb-5", attrs: { id: "order-now" } },
+      { staticClass: "container py-5", attrs: { id: "order-now" } },
       [
         _c("div", { staticClass: "row h-100 py-5" }, [
-          _c("div", { staticClass: "col-7" }, [
+          _c("div", { staticClass: "col-12 col-md-7 mb-5" }, [
             _c("div", { staticClass: "row h-100" }, [
               _c(
                 "div",
                 {
                   staticClass:
-                    "col-6 d-flex flex-column justify-content-between",
+                    "col-12 col-md-6 d-flex flex-column justify-content-between",
                 },
                 [
-                  _c("div", { staticClass: "my-card mb-3 p-2" }, [
+                  _c("div", { staticClass: "card mb-3 p-2" }, [
                     _c("img", {
                       staticClass: "card-img-top",
                       attrs: { src: "/img/how_1.svg", alt: "..." },
@@ -2854,7 +2852,7 @@ var staticRenderFns = [
                     ]),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "my-card card p-2" }, [
+                  _c("div", { staticClass: "card mb-3 p-2" }, [
                     _c("img", {
                       staticClass: "card-img-top",
                       attrs: { src: "/img/how_2.svg", alt: "..." },
@@ -2881,10 +2879,10 @@ var staticRenderFns = [
                 "div",
                 {
                   staticClass:
-                    "col-6 d-flex flex-column justify-content-center",
+                    "col-12 col-md-6 d-flex flex-column justify-content-center",
                 },
                 [
-                  _c("div", { staticClass: "my-card p-2" }, [
+                  _c("div", { staticClass: "card mb-3 p-2" }, [
                     _c("img", {
                       staticClass: "card-img-top",
                       attrs: { src: "/img/how_3.svg", alt: "..." },
@@ -2913,7 +2911,7 @@ var staticRenderFns = [
             "div",
             {
               staticClass:
-                "col-4 offset-1 d-flex flex-column justify-content-center",
+                "col-12 col-md-4 offset-md-1 pt-3 d-flex flex-column justify-content-center",
             },
             [
               _c("h1", { staticClass: "font-weight-bold" }, [
@@ -15247,7 +15245,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/luca/Desktop/deliveboo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\X95\Code\deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
