@@ -18,10 +18,10 @@
                         @auth
                             <li><a class="text-dark" href="{{ url('/dashboard') }}">Dashboard</a></li>
                         @else
-                            <li><a class="text-dark" href="{{ route('login') }}">Login Ristorante</a></li>
+                            <li><a class="text-dark" href="{{ route('login') }}">Login</a></li>
 
                             @if (Route::has('register'))
-                                <li><a class="text-dark" href="{{ route('register') }}">Registrati Ristorante</a></li>
+                                <li><a class="text-dark ml-3" href="{{ route('register') }}">Registrati</a></li>
                             @endif
                         @endauth
                     @endif
