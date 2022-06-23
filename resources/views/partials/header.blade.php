@@ -1,17 +1,13 @@
 <header id="navbar" class="position-fixed fixed-top text-white">
-    <nav :class="{ 'onScroll': !view.topOfPage}" class=" navbar navbar-expand-lg navbar-light  justify-content-between px-3 my-auto">
+    <nav :class="{ 'onScroll': !view.topOfPage }"
+        class=" navbar navbar-expand-lg navbar-light  justify-content-between align-items-center my-auto">
 
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="my-logo-text text-success font-weight-bold" href="/">DeliveBoo</a>
+        <div class="container my-column-flex">
 
+            <a class="my-logo-text text-success font-weight-bold" href="/">DeliveBoo</a>
 
-        <div class="px-3">
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
+            <div class="px-3">
+                <ul>
                     <li><a class="text-dark mr-3" href="/cerca">Cerca</a></li>
                     <li><a class="text-dark mr-3" href="#">Ristoranti</a></li>
                     @if (Route::has('login'))
@@ -27,9 +23,8 @@
                     @endif
                 </ul>
             </div>
-        </div>
 
-    </div>
+        </div>
     </nav>
 
 
@@ -58,6 +53,3 @@
             </ul>
         </nav>
     </div> --}}
-
-
-

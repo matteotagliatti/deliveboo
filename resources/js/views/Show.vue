@@ -11,7 +11,7 @@
         </div>
         <div class="row py-5" id="menu">
             <!-- Menu -->
-            <div class="col-8">
+            <div class="col-12">
                 <div class="container">
                     <h2 class="mb-4">Menu</h2>
                     <div class="items">
@@ -29,12 +29,6 @@
                             <p>{{ dish.prezzo }} €</p>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- Checkout -->
-            <div class="col-4">
-                <div class="container">
-                    <h2>Checkout</h2>
                 </div>
             </div>
         </div>

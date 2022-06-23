@@ -3,6 +3,7 @@
 
 // Variables
 @import "variables";
+@import "mixins";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
@@ -38,6 +39,12 @@ footer {
 
 .my-logo-text {
     font-size: 1.5rem;
+}
+
+header {
+    ul {
+        margin-bottom: 0 !important;
+    }
 }
 
 .my-grid {
@@ -229,8 +236,6 @@ div#menu {
             opacity: 0.3;
         }
     }
-
-
 }
 
 // .change_color {
@@ -238,36 +243,69 @@ div#menu {
 // }
 
 nav {
-
     background-color: transparent;
     display: flex;
     align-items: center;
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
     &.onScroll {
-      box-shadow: 0 0 10px #aaa;
-      background-color: #fff;
-      ul li {
-        color: #10b761;
-      }
+        box-shadow: 0 0 10px #aaa;
+        background-color: #fff;
+        ul li {
+            color: #10b761;
+        }
     }
     ul {
-      margin-left: 3em;
-      width: 25%;
-      display: flex;
-      justify-content: space-between;
-      li {
-        cursor: pointer;
-        font-weight: 600;
-        list-style-type: none;
-        color: white;
-      }
+        margin-left: 3em;
+        width: 25%;
+        display: flex;
+        justify-content: space-between;
+        li {
+            cursor: pointer;
+            font-weight: 600;
+            list-style-type: none;
+            color: white;
+        }
     }
-  }
+}
 
 @include sm {
+    header {
+        ul {
+            margin-left: 0;
+            padding-inline-start: 0;
+
+            li {
+                a {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        .my-column-flex {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
     .my-grid {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: 2rem;
+    }
+
+    div#info-restaurant {
+        h3 {
+            font-size: 1rem;
+        }
+
+        h5 {
+            font-size: 0.7rem;
+        }
+    }
+
+    div#menu {
+        div.items {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
     }
 }
