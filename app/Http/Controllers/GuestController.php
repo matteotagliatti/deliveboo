@@ -57,8 +57,4 @@ class GuestController extends Controller
             return view('checkout')->withErrors('An error occurred: ');
         };
     }
-
-    public function search() {
-        return view('guests.search');
-    }
 }
