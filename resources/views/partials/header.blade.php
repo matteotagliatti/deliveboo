@@ -4,7 +4,7 @@
 
         <div class="container my-column-flex">
 
-            <a class="my-logo-text text-success font-weight-bold" href="/">DeliveBoo</a>
+            <a class="my-logo-text text-white font-weight-bold" href="/">DeliveBoo</a>
 
             <div class="px-3">
                 <ul>
@@ -17,7 +17,7 @@
                             <li><a class="text-white" href="{{ route('login') }}">Login</a></li>
 
                             @if (Route::has('register'))
-                                <li><a class="text-white  ml-3" href="{{ route('register') }}">Registrati</a></li>
+                                <li><a class="text-white ml-3" href="{{ route('register') }}">Registrati</a></li>
                             @endif
                         @endauth
                     @endif
