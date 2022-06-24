@@ -15245,7 +15245,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\ekapr\Desktop\Boolean\deliveboo\resources\js\front.js */"./resources/js/front.js");
+=======
+module.exports = __webpack_require__(/*! /Users/luca/Desktop/deliveboo/resources/js/front.js */"./resources/js/front.js");
+>>>>>>> master
 
 
 /***/ })

@@ -14721,6 +14721,28 @@ var app = new Vue({
     return h(_views_Show__WEBPACK_IMPORTED_MODULE_0__["default"]);
   }
 });
+new Vue({
+  el: '#navbar',
+  data: function data() {
+    return {
+      view: {
+        topOfPage: true
+      }
+    };
+  },
+  beforeMount: function beforeMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll: function handleScroll() {
+      if (window.pageYOffset > 0) {
+        if (this.view.topOfPage) this.view.topOfPage = false;
+      } else {
+        if (!this.view.topOfPage) this.view.topOfPage = true;
+      }
+    }
+  }
+});
 
 /***/ }),
 
@@ -14800,7 +14822,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\ekapr\Desktop\Boolean\deliveboo\resources\js\front-show.js */"./resources/js/front-show.js");
+=======
+module.exports = __webpack_require__(/*! /Users/luca/Desktop/deliveboo/resources/js/front-show.js */"./resources/js/front-show.js");
+>>>>>>> master
 
 
 /***/ })

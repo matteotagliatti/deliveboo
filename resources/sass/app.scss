@@ -39,6 +39,7 @@ footer {
 
 .my-logo-text {
     font-size: 1.5rem;
+    color: tomato !important;
 }
 
 header {
@@ -112,6 +113,11 @@ header {
     fill: #ffffff;
 }
 
+.gr-orange{
+    background: rgb(243,114,59);
+    background: linear-gradient(90deg, rgba(243,114,59,1) 0%, rgba(229,71,80,1) 100%);
+}
+
 span.capitalize {
     text-transform: capitalize;
     font-style: italic;
@@ -121,6 +127,7 @@ span.capitalize {
     height: 600px;
     width: 100%;
     object-fit: none;
+    filter: brightness(.5);
 }
 
 #text-hero {
@@ -132,13 +139,6 @@ span.capitalize {
     span {
         font-size: 3rem;
         color: #fff;
-        text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.2),
-            0px 1px 1px rgba(0, 0, 0, 0.2), 2px 1px 1px rgba(0, 0, 0, 0.2),
-            1px 2px 1px rgba(0, 0, 0, 0.2), 3px 2px 1px rgba(0, 0, 0, 0.2),
-            2px 3px 1px rgba(0, 0, 0, 0.2), 4px 3px 1px rgba(0, 0, 0, 0.2),
-            3px 4px 1px rgba(0, 0, 0, 0.2), 5px 4px 1px rgba(0, 0, 0, 0.2),
-            4px 5px 1px rgba(0, 0, 0, 0.2), 6px 5px 1px rgba(0, 0, 0, 0.2),
-            5px 6px 1px rgba(0, 0, 0, 0.2), 7px 6px 1px rgba(0, 0, 0, 0.2);
     }
 
     a {
@@ -243,6 +243,7 @@ div#menu {
 // }
 
 nav {
+
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -250,8 +251,9 @@ nav {
     &.onScroll {
         box-shadow: 0 0 10px #aaa;
         background-color: #fff;
-        ul li {
-            color: #10b761;
+
+        a{
+            color: #000 !important;
         }
     }
     ul {
@@ -263,9 +265,25 @@ nav {
             cursor: pointer;
             font-weight: 600;
             list-style-type: none;
-            color: white;
+            color:black !important;
+
+
+
         }
     }
+}
+
+.footer-image {
+    width:200px;
+    height: 200px;
+    background-size:contain;
+    background-image: url("../public/img/recipe-fast-delivery.png");
+}
+
+.copyright-bar{
+    width: 100vw;
+    height:35px;
+    background-color: tomato;
 }
 
 @include sm {
