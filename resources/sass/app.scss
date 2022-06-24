@@ -234,10 +234,18 @@ div#menu {
             border-radius: 5px;
             box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
             transition: transform 0.2s ease-in-out;
+            &:hover {
+                transform: translateY(-0.5rem);
+                cursor: pointer;
+            }
         }
 
         div.item.my-not-visible {
             opacity: 0.3;
+            &:hover {
+                transform: none;
+                cursor: initial;
+            }
         }
     }
 }

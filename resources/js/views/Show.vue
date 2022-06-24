@@ -14,7 +14,10 @@
             <!-- Menu -->
             <div class="col-8">
                 <div class="container">
-                    <h2 class="mb-4">Menu</h2>
+                    <h2>Menu</h2>
+                    <p class="mb-4">
+                        Clicca sui singoli piatti per aggiungerli al carrello.
+                    </p>
                     <div class="items">
                         <div
                             class="item p-4"
@@ -23,15 +26,12 @@
                             :class="
                                 dish.visibilita == 0 ? 'my-not-visible' : ''
                             "
-                            @click="addToCart(dish)"
+                            @click="dish.visibilita == 1 ? addToCart(dish) : ''"
                         >
                             <h3>{{ dish.nome }}</h3>
                             <p>Descrizione: {{ dish.descrizione }}</p>
                             <p>Ingredienti: {{ dish.ingredienti }}</p>
                             <p>{{ dish.prezzo }} €</p>
-                            <button class="btn btn-primary">
-                                Aggiungi al carrello
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -45,16 +45,26 @@
                             <tr>
                                 <th scope="col">Nome</th>
                                 <th scope="col">Prezzo</th>
+                                <th scope="col">Rimuovi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(dish, index) in cart" :key="index">
                                 <td>{{ dish.nome }}</td>
                                 <td>{{ dish.prezzo }} €</td>
+                                <td>
+                                    <button
+                                        class="btn btn-sm btn-danger"
+                                        @click="removeFromCart(dish)"
+                                    >
+                                        Rimuovi
+                                    </button>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Totale</th>
                                 <td>{{ totalTwoDecimals }} €</td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -81,6 +91,10 @@ export default {
         addToCart(dish) {
             this.cart.push(dish);
             this.total += parseFloat(dish.prezzo);
+        },
+        removeFromCart(dish) {
+            this.cart.splice(this.cart.indexOf(dish), 1);
+            this.total -= parseFloat(dish.prezzo);
         },
     },
     mounted() {
