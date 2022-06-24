@@ -13,8 +13,8 @@
                     class="shape-fill"></path>
             </svg>
         </div>
-        <div class="row mt-5rem">
-            <div class="col-12 col-sm-4">
+        <div id="footer-link" class="row mt-5rem">
+            <div class="col-12 col-sm-6">
                 <ul class="list-unstyled">
                     <li>
                         <h3>Social</h3>
@@ -25,7 +25,7 @@
 
                 </ul>
             </div>
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-sm-6">
                 <ul class="list-unstyled">
                     <li>
                         <h3>Contatti</h3>
@@ -36,7 +36,7 @@
                 </ul>
 
             </div>
-            <div class="col-12 col-sm-4">
+            <div class="col-12">
                 <ul class="list-unstyled">
                     <li>
                         <h3>Restiamo in contatto</h3>
@@ -46,10 +46,6 @@
                         <input type="email" name="email" id="email">
                         <input type="submit" value="Invia">
                     </li>
-                    <li>
-                       <div class="footer-image img-fluid"></div>
-                    </li>
-
                 </ul>
             </div>
         </div>
@@ -57,11 +53,11 @@
     <div class="copyright-bar">
 
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-6 mt-2">
+            <div class="row justify-content-between">
+                <div class="mt-2">
                     <p class="mb-0">Copyright © 2022 Deliveboo. All rights reserved.</p>
                 </div>
-                <div class="col-12 col-sm-6 text-right mt-2">
+                <div class="mt-2">
                     <p class="mb-0">Made with <i class="fas fa-heart"></i> by <a href="#" target="_blank">dreamTeam #55</a></p>
                 </div>
             </div>
