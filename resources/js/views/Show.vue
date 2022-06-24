@@ -39,7 +39,7 @@
             <!-- Checkout -->
             <div class="col-4">
                 <div class="container">
-                    <h2 class="mb-4">Checkout</h2>
+                    <h2 class="mb-4">Carrello</h2>
                     <table class="table" v-if="cart.length > 0">
                         <thead>
                             <tr>

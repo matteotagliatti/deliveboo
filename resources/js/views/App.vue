@@ -10,7 +10,11 @@
                 class="text-center my-py-13 text-white position-absolute"
             >
                 <span class="d-block">Cerca i tuoi cibi preferiti</span>
-                <a class="btn btn-sm gr-orange text-white rounded-lg" href="#">Tutti i ristoranti</a>
+                <a
+                    href="/cerca"
+                    class="btn btn-sm gr-orange text-white rounded-lg"
+                    >Cerca</a
+                >
             </div>
             <div class="custom-shape-divider-bottom-1655826606">
                 <svg
@@ -92,7 +96,11 @@
                         <span>FOOYES DELIVERY</span>
                         <h1>Hai un ristorante?</h1>
                         <h3 class="mb-4">Enjoy a tasty food in minutes!</h3>
-                        <a class="btn gr-orange text-white w-50">Registrati</a>
+                        <a
+                            href="/register"
+                            class="btn gr-orange text-white w-50"
+                            >Registrati</a
+                        >
                     </div>
                 </div>
             </div>
@@ -175,7 +183,9 @@
                         Duis aute irure dolor in reprehenderit in voluptate
                         velit esse cillum dolore eu fugiat nulla pariatur.
                     </p>
-                    <a class="btn gr-orange text-white w-50">Ordina</a>
+                    <a href="/cerca" class="btn gr-orange text-white w-50"
+                        >Ordina</a
+                    >
                 </div>
             </div>
         </div>
