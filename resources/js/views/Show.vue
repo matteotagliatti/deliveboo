@@ -1,19 +1,17 @@
 <template>
     <div v-if="restaurant">
         <div id="hero" class="position-relative bg-dark">
-            <div
-                id="text-hero"
-                class="text-center my-py-13 text-white position-absolute"
-            >
+            <img class="position-absolute" :src="restaurant.immagine" alt="">
+            <div id="text-hero" class="text-center my-py-13 text-white position-absolute">
                 <h1>{{ restaurant.nome }}</h1>
                 <p>{{ restaurant.indirizzo }}</p>
             </div>
         </div>
 
-        <div class="row py-5" id="menu">
+        <div class="container py-5" id="menu">
+            <div class="row">
             <!-- Menu -->
-            <div class="col-8">
-                <div class="container">
+                <div class="col-12 col-sm-8 mb-5">
                     <h2>Menu</h2>
                     <p class="mb-4">
                         Clicca sui singoli piatti per aggiungerli al carrello.
@@ -35,10 +33,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Checkout -->
-            <div class="col-4">
-                <div class="container">
+                <!-- Checkout -->
+                <div class="col-12 col-sm-4">
                     <h2 class="mb-4">Checkout</h2>
                     <table class="table" v-if="cart.length > 0">
                         <thead>

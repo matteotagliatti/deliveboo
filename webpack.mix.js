@@ -16,3 +16,4 @@ mix.js("resources/js/admin.js", "public/js");
 mix.js("resources/js/front.js", "public/js");
 mix.js("resources/js/front-show.js", "public/js");
 mix.js("resources/js/front-search.js", "public/js");
+mix.js("resources/js/front-restaurants.js", "public/js");

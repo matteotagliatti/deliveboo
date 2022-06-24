@@ -9,7 +9,7 @@
             <div class="px-3">
                 <ul>
                     <li><a class="text-white mr-3" href="/cerca">Cerca</a></li>
-                    <li><a class="text-white mr-3" href="#">Ristoranti</a></li>
+                    <li><a class="text-white mr-3" href="{{ url('/ristoranti') }}">Ristoranti</a></li>
                     @if (Route::has('login'))
                         @auth
                             <li><a class="text-white" href="{{ url('/dashboard') }}">Dashboard</a></li>

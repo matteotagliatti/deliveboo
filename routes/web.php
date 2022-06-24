@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function() {
 
 Route::get('/', 'GuestController@index');
 Route::get('/cerca', 'SearchController@index');
+Route::get('/ristoranti', 'GuestController@restaurants');
 Route::post('/update', 'SearchController@update')->name('search.update');
 Route::get('/{id}', 'GuestController@show');
 Route::post('/checkout', 'GuestController@checkout');
