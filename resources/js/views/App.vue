@@ -10,7 +10,7 @@
                 class="text-center my-py-13 text-white position-absolute"
             >
                 <span class="d-block">Cerca i tuoi cibi preferiti</span>
-                <a class="btn btn-sm gr-orange text-white rounded-lg" href="#">Tutti i ristoranti</a>
+                <a class="btn btn-sm gr-orange text-white rounded-lg" href="/ristoranti">Tutti i ristoranti</a>
             </div>
             <div class="custom-shape-divider-bottom-1655826606">
                 <svg
