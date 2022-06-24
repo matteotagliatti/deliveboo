@@ -23,6 +23,12 @@
 
             </div>
         </div>
+        @dump($users)
+        @dump($choosenType)
+
+        @foreach ($users as $user)
+            @dump($user->pivot)
+        @endforeach
     @endsection
 
     @section('script')

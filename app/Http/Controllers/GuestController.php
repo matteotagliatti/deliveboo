@@ -12,21 +12,21 @@ class GuestController extends Controller
     }
 
     public function show() {
-        // $gateway = new \Braintree\Gateway([
-        //     'environment' => env('BRAINTREE_ENV'),
-        //     'merchantId' => env('BRAINTREE_MERCHANT_ID'),
-        //     'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
-        //     'privateKey' => env('BRAINTREE_PRIVATE_KEY')
-        // ]);
+        /* $gateway = new \Braintree\Gateway([
+            'environment' => env('BRAINTREE_ENV'),
+            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
+            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
+            'privateKey' => env('BRAINTREE_PRIVATE_KEY')
+        ]);
 
-        // $token = $gateway->ClientToken()->generate();
+        $token = $gateway->ClientToken()->generate(); */
 
-        return view('guests.show');
+        return view('guests.show'/* , ['token' => $token] */);
     }
 
     public function checkout(Request $request)
     {
-        $gateway = new \Braintree\Gateway([
+        /* $gateway = new \Braintree\Gateway([
             'environment' => env('BRAINTREE_ENV'),
             'merchantId' => env('BRAINTREE_MERCHANT_ID'),
             'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
@@ -53,12 +53,8 @@ class GuestController extends Controller
                 'amount' => $transaction->amount,
                 'name' => $transaction->customer['firstName']
             ]);
-        } else {
-            return view('checkout')->withErrors('An error occurred: ');
-        };
-    }
-
-    public function search() {
-        return view('guests.search');
+        } else { */
+            return view('checkout')/* ->withErrors('An error occurred: ') */;
+     /*    }; */
     }
 }
