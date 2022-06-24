@@ -9,9 +9,10 @@
                 <p>{{ restaurant.indirizzo }}</p>
             </div>
         </div>
+
         <div class="row py-5" id="menu">
             <!-- Menu -->
-            <div class="col-12">
+            <div class="col-8">
                 <div class="container">
                     <h2 class="mb-4">Menu</h2>
                     <div class="items">
@@ -22,13 +23,41 @@
                             :class="
                                 dish.visibilita == 0 ? 'my-not-visible' : ''
                             "
+                            @click="addToCart(dish)"
                         >
                             <h3>{{ dish.nome }}</h3>
                             <p>Descrizione: {{ dish.descrizione }}</p>
                             <p>Ingredienti: {{ dish.ingredienti }}</p>
                             <p>{{ dish.prezzo }} €</p>
+                            <button class="btn btn-primary">
+                                Aggiungi al carrello
+                            </button>
                         </div>
                     </div>
+                </div>
+            </div>
+            <!-- Checkout -->
+            <div class="col-4">
+                <div class="container">
+                    <h2 class="mb-4">Checkout</h2>
+                    <table class="table" v-if="cart.length > 0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Prezzo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(dish, index) in cart" :key="index">
+                                <td>{{ dish.nome }}</td>
+                                <td>{{ dish.prezzo }} €</td>
+                            </tr>
+                            <tr>
+                                <th>Totale</th>
+                                <td>{{ totalTwoDecimals }} €</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -44,7 +73,15 @@ export default {
     data() {
         return {
             restaurant: null,
+            cart: [],
+            total: 0,
         };
+    },
+    methods: {
+        addToCart(dish) {
+            this.cart.push(dish);
+            this.total += parseFloat(dish.prezzo);
+        },
     },
     mounted() {
         const url = window.location.href;
@@ -54,11 +91,16 @@ export default {
             .get(`/api/users/${id}`)
             .then((response) => {
                 this.restaurant = response.data;
-                console.log(this.restaurant);
             })
             .catch((error) => {
                 console.log(error);
             });
+    },
+    computed: {
+        // this.total with only two numbers after the decimal point
+        totalTwoDecimals() {
+            return this.total.toFixed(2);
+        },
     },
 };
 </script>
