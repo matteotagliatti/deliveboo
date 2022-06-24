@@ -14,7 +14,7 @@
             </svg>
         </div>
         <div id="footer-link" class="row mt-5rem">
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-sm-4">
                 <ul class="list-unstyled">
                     <li>
                         <h3>Social</h3>
@@ -25,7 +25,7 @@
 
                 </ul>
             </div>
-            <div class="col-12 col-sm-6">
+            <div class="col-12 col-sm-4">
                 <ul class="list-unstyled">
                     <li>
                         <h3>Contatti</h3>
@@ -36,7 +36,7 @@
                 </ul>
 
             </div>
-            <div class="col-12">
+            <div class="col-12 col-sm-4">
                 <ul class="list-unstyled">
                     <li>
                         <h3>Restiamo in contatto</h3>
