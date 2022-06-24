@@ -5,26 +5,9 @@
 @endsection
 
 @section('content')
-    <div>
-        <div id="hero" class="position-relative bg-dark">
-            <div id="text-hero" class="text-center my-py-13 text-white position-absolute">
-                <h1>Cerca</h1>
-                <form action="{{ route('search.update') }}" method="post">
-                    @csrf
+    @include ('partials.search')
+@endsection
 
-                    <select name="types" id="types">
-                        <option>-- Scegli la tipologia --</option>
-                        @foreach ($types as $type)
-                            <option value="{{ $type->nome }}">{{ $type->nome }}</option>
-                        @endforeach
-                    </select>
-                    <input type="submit" value="Cerca">
-                </form>
-
-            </div>
-        </div>
-    @endsection
-
-    @section('script')
-        <script src="{{ asset('js/front-search.js') }}"></script>
-    @endsection
+@section('script')
+    <script src="{{ asset('js/front-search.js') }}"></script>
+@endsection

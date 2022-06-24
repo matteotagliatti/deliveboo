@@ -5,32 +5,38 @@
 @endsection
 
 @section('content')
-    <div>
-        <div id="hero" class="position-relative bg-dark">
-            <div id="text-hero" class="text-center my-py-13 text-white position-absolute">
-                <h1>Cerca</h1>
-                <form action="{{ route('search.update') }}" method="post">
-                    @csrf
+    @include ('partials.search')
 
-                    <select name="types" id="types">
-                        <option>-- Scegli la tipologia --</option>
-                        @foreach ($types as $type)
-                            <option value="{{ $type->nome }}">{{ $type->nome }}</option>
-                        @endforeach
-                    </select>
-                    <input type="submit" value="Cerca">
-                </form>
+    <div class="row py-5">
+        <div class="col-12">
+            <div class="container">
+                <div class="my-grid">
+                    @foreach ($usersArray as $user)
+                        <a class="my-grid-element d-flex" class="" href="/{{ $user->id }}">
+                            <img src="{{ $user->immagine }}" alt="{{ $user->nome }}" />
+                            <div class="info-restaurant p-4">
+                                <span>
+                                    @foreach ($user->types as $type)
+                                        {{ ucFirst($type->nome) }}
+                                    @endforeach
+                                </span>
 
+                                <h3 class="font-weight-bold">{{ $user->nome }}</h3>
+                                <h5 class="text-secondary font-weight-light">
+                                    {{ $user->indirizzo }}
+                                </h5>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
             </div>
         </div>
-        @dump($users)
-        @dump($choosenType)
+    </div>
+@endsection
 
-        @foreach ($users as $user)
-            @dump($user->pivot)
-        @endforeach
-    @endsection
-
-    @section('script')
-        <script src="{{ asset('js/front-search.js') }}"></script>
-    @endsection
+@section('script')
+    <script src="{{ asset('js/front-search.js') }}"></script>
+@endsection

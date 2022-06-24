@@ -29,8 +29,18 @@ class SearchController extends Controller
 
         $choosenType = $request->types;
 
-        $users = User::find(2)->types()->get();
+        $users = User::all();
+        $usersArray = [];
+
+        foreach ($users as $user) {
+            foreach ($user->types as $type) {
+                if ($type->id == $choosenType) {
+                    array_push($usersArray, $user);
+                    
+                }
+            }
+        }
         
-        return view('guests.search2', compact('users', 'types', 'choosenType'));
+        return view('guests.search2', compact('usersArray', 'types', 'choosenType'));
     }
 }
