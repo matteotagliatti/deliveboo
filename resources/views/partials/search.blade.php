@@ -5,13 +5,13 @@
             <form action="{{ route('search.update') }}" method="post">
                 @csrf
 
-                <select name="types" id="types">
-                    <option>-- Scegli la tipologia --</option>
+                <select class="form-control mb-2" name="types" id="types">
+                    <option>Scegli la tipologia</option>
                     @foreach ($types as $type)
-                        <option value="{{ $type->id }}">{{ $type->nome }}</option>
+                        <option value="{{ $type->id }}">{{ ucFirst($type->nome) }}</option>
                     @endforeach
                 </select>
-                <input type="submit" value="Cerca">
+                <input class="btn btn-primary" type="submit" value="Cerca">
             </form>
 
         </div>

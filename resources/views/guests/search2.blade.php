@@ -11,8 +11,8 @@
         <div class="col-12">
             <div class="container">
                 <div class="my-grid">
-                    @foreach ($usersArray as $user)
-                        <a class="my-grid-element d-flex" class="" href="/{{ $user->id }}">
+                    @forelse ($usersArray as $user)
+                        <a class="my-grid-element d-flex" href="/{{ $user->id }}">
                             <img src="{{ $user->immagine }}" alt="{{ $user->nome }}" />
                             <div class="info-restaurant p-4">
                                 <span>
@@ -30,7 +30,9 @@
                                 <i class="fas fa-chevron-right"></i>
                             </div>
                         </a>
-                    @endforeach
+                    @empty
+                        <h2>Nessun ristorante con questa tipologia</h2>
+                    @endforelse
                 </div>
             </div>
         </div>
