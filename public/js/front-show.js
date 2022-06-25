@@ -1947,14 +1947,61 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   components: {},
   data: function data() {
     return {
-      restaurant: null
+      restaurant: null,
+      cart: [],
+      total: 0
     };
+  },
+  methods: {
+    addToCart: function addToCart(dish) {
+      this.cart.push(dish);
+      this.total += parseFloat(dish.prezzo);
+    },
+    removeFromCart: function removeFromCart(dish) {
+      this.cart.splice(this.cart.indexOf(dish), 1);
+      this.total -= parseFloat(dish.prezzo);
+    }
   },
   mounted: function mounted() {
     var _this = this;
@@ -1963,10 +2010,15 @@ __webpack_require__.r(__webpack_exports__);
     var id = url.substring(url.lastIndexOf("/") + 1);
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/users/".concat(id)).then(function (response) {
       _this.restaurant = response.data;
-      console.log(_this.restaurant);
     })["catch"](function (error) {
       console.log(error);
     });
+  },
+  computed: {
+    // this.total with only two numbers after the decimal point
+    totalTwoDecimals: function totalTwoDecimals() {
+      return this.total.toFixed(2);
+    }
   }
 });
 
@@ -2461,6 +2513,11 @@ var render = function () {
           "div",
           { staticClass: "position-relative bg-dark", attrs: { id: "hero" } },
           [
+            _c("img", {
+              staticClass: "position-absolute",
+              attrs: { src: _vm.restaurant.immagine, alt: "" },
+            }),
+            _vm._v(" "),
             _c(
               "div",
               {
@@ -2477,10 +2534,16 @@ var render = function () {
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "row py-5", attrs: { id: "menu" } }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c("div", { staticClass: "container" }, [
-              _c("h2", { staticClass: "mb-4" }, [_vm._v("Menu")]),
+        _c("div", { staticClass: "container py-5", attrs: { id: "menu" } }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-12 col-sm-8 mb-5" }, [
+              _c("h2", [_vm._v("Menu")]),
+              _vm._v(" "),
+              _c("p", { staticClass: "mb-4" }, [
+                _vm._v(
+                  "\n                    Clicca sui singoli piatti per aggiungerli al carrello.\n                "
+                ),
+              ]),
               _vm._v(" "),
               _c(
                 "div",
@@ -2492,6 +2555,11 @@ var render = function () {
                       key: index,
                       staticClass: "item p-4",
                       class: dish.visibilita == 0 ? "my-not-visible" : "",
+                      on: {
+                        click: function ($event) {
+                          dish.visibilita == 1 ? _vm.addToCart(dish) : ""
+                        },
+                      },
                     },
                     [
                       _c("h3", [_vm._v(_vm._s(dish.nome))]),
@@ -2511,12 +2579,80 @@ var render = function () {
                 0
               ),
             ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-12 col-sm-4" }, [
+              _c("h2", { staticClass: "mb-4" }, [_vm._v("Checkout")]),
+              _vm._v(" "),
+              _vm.cart.length > 0
+                ? _c("table", { staticClass: "table" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      [
+                        _vm._l(_vm.cart, function (dish, index) {
+                          return _c("tr", { key: index }, [
+                            _c("td", [_vm._v(_vm._s(dish.nome))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(dish.prezzo) + " €")]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-sm btn-danger",
+                                  on: {
+                                    click: function ($event) {
+                                      return _vm.removeFromCart(dish)
+                                    },
+                                  },
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    Rimuovi\n                                "
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("th", [_vm._v("Totale")]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(_vm.totalTwoDecimals) + " €"),
+                          ]),
+                          _vm._v(" "),
+                          _c("td"),
+                        ]),
+                      ],
+                      2
+                    ),
+                  ])
+                : _vm._e(),
+            ]),
           ]),
         ]),
       ])
     : _vm._e()
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Nome")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Prezzo")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Rimuovi")]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -14822,11 +14958,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\ekapr\Desktop\Boolean\deliveboo\resources\js\front-show.js */"./resources/js/front-show.js");
-=======
 module.exports = __webpack_require__(/*! /Users/luca/Desktop/deliveboo/resources/js/front-show.js */"./resources/js/front-show.js");
->>>>>>> master
 
 
 /***/ })
