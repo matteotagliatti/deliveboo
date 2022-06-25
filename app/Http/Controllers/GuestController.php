@@ -18,8 +18,9 @@ class GuestController extends Controller
     public function checkout(Request $request)
     {
 
+        $amount = $request->total;
         return response()->json([
-            'message' => 'Message from GuestController@index'
+            'message' => $amount
         ]);
 
         /* $amount = $request->total;

@@ -63,7 +63,7 @@
                                 </tr>
                                 <tr>
                                     <th>Totale</th>
-                                    <td>{{ total }} €</td>
+                                    <td>{{ totalTwoDecimals }} €</td>
                                     <td></td>
                                 </tr>
                             </tbody>
@@ -120,7 +120,7 @@ export default {
             console.log("Success!", payload);
             axios
                 .post("/checkout", {
-                    total: this.total,
+                    total: this.total.toFixed(2),
                 })
                 .then((response) => {
                     console.log(response.data.message);
@@ -154,12 +154,12 @@ export default {
             }
         }
     },
-    /* computed: {
+    computed: {
         // this.total with only two numbers after the decimal point
         totalTwoDecimals() {
             return this.total.toFixed(2);
         },
-    }, */
+    },
 };
 </script>
 
