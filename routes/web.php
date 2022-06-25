@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::post('checkoutsubmit','CheckoutController@index');
-Route::get('checkout','CheckoutController@index');
-
+Route::post('checkout','GuestController@checkout');
 
 Route::get('register', 'Auth\RegisterController@chooseType')->name('register');
 
@@ -32,4 +30,3 @@ Route::get('/cerca', 'SearchController@index');
 Route::get('/ristoranti', 'GuestController@restaurants');
 Route::post('/update', 'SearchController@update')->name('search.update');
 Route::get('/{id}', 'GuestController@show');
-Route::post('/checkout', 'GuestController@checkout');

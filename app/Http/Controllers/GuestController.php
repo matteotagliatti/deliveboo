@@ -12,20 +12,16 @@ class GuestController extends Controller
     }
 
     public function show() {
-        /* $gateway = new \Braintree\Gateway([
-            'environment' => env('BRAINTREE_ENV'),
-            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
-            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
-            'privateKey' => env('BRAINTREE_PRIVATE_KEY')
-        ]);
-
-        $token = $gateway->ClientToken()->generate(); */
-
-        return view('guests.show'/* , ['token' => $token] */);
+        return view('guests.show');
     }
 
     public function checkout(Request $request)
     {
+        $amount = $request->total;
+        return view('guests.index', compact('amount'));
+        dd($request->all());
+        dump($request->all());
+
         /* $gateway = new \Braintree\Gateway([
             'environment' => env('BRAINTREE_ENV'),
             'merchantId' => env('BRAINTREE_MERCHANT_ID'),

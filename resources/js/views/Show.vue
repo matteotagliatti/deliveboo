@@ -96,6 +96,9 @@ export default {
             cart: [],
             total: 0,
             authTokem: "sandbox_q745yw9z_7wbb5qxhqhm6qydj",
+            token: document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute("content"),
         };
     },
     methods: {
@@ -114,9 +117,8 @@ export default {
             localStorage.setItem("total", this.total);
         },
         onSuccess(payload) {
-            this.total = payload.nonce;
             console.log("Success!", payload);
-            axios.post("/checkoutsubmit", {
+            axios.post("/checkout", {
                 total: this.total,
             });
         },

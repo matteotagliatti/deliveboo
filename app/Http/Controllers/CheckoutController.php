@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 class CheckoutController extends Controller
 {
     public function index(Request $request) {
+        $amount = $request->total;
+        return view('guests.index', compact('amount'));
+
+        /* dd($request->all()); */
+        /* 
+
+        
+
         /* $gateway = new \Braintree\Gateway([
             'environment' => env('BRAINTREE_ENV'),
             'merchantId' => env('BRAINTREE_MERCHANT_ID'),
