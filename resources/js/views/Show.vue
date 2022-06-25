@@ -97,8 +97,17 @@
                                 type="text"
                                 v-model="userTelefono"
                                 placeholder="Numero di telefono*"
+                                @keyup="validatePhone(userTelefono)"
                                 required
                             />
+                            <small
+                                class="text-danger"
+                                v-if="
+                                    validatePhoneMessage == 'Numero non valido'
+                                "
+                            >
+                                {{ validatePhoneMessage }}
+                            </small>
                             <input
                                 class="form-control"
                                 type="text"
@@ -117,6 +126,8 @@
                             </small>
                             <v-braintree
                                 authorization="sandbox_q745yw9z_7wbb5qxhqhm6qydj"
+                                locale="it_IT"
+                                btnText="Ordina"
                                 @success="onSuccess"
                                 @error="onError"
                             ></v-braintree>
@@ -149,6 +160,7 @@ export default {
             userSurname: null,
             userIndirizzo: null,
             userTelefono: null,
+            validatePhoneMessage: null,
             userEmail: null,
             validateEmailMessage: null,
             responseMessage: null,
@@ -186,6 +198,7 @@ export default {
                 .then((response) => {
                     this.cart = [];
                     this.total = 0;
+                    this.save();
                     this.responseMessage = response.data.message;
                 });
         },
@@ -198,6 +211,13 @@ export default {
                 this.validateEmailMessage = "Email valida";
             } else {
                 this.validateEmailMessage = "Email non valida";
+            }
+        },
+        validatePhone(value) {
+            if (/^\d+$/.test(value)) {
+                this.validatePhoneMessage = "Numero valido";
+            } else {
+                this.validatePhoneMessage = "Numero non valido";
             }
         },
     },

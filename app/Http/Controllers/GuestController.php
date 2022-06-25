@@ -53,7 +53,7 @@ class GuestController extends Controller
             $order->save();
 
             return response()->json([
-                'message' => 'Transazione andata a buon fine. L\'ID è' . $transaction->id,
+                'message' => 'Transazione andata a buon fine. L\'ID della transazione è ' . $transaction->id,
             ]);
         } else {
             return response()->json([
