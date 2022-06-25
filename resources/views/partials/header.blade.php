@@ -4,7 +4,7 @@
 
         <div class="container my-column-flex">
 
-            <a class="my-logo-text text-white font-weight-bold" href="/">DeliveBoo</a>
+            <a id="logo" class="my-logo-text text-white font-weight-bold" href="/">DeliveBoo</a>
 
             <div class="px-3">
                 <ul>

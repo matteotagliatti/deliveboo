@@ -10962,7 +10962,6 @@ body {
 }
 
 footer {
-  height: 500px;
   background-color: bisque;
 }
 
@@ -10988,6 +10987,16 @@ footer {
 
 .my-logo-text {
   font-size: 1.5rem;
+  color: #ff6347 !important;
+}
+
+a {
+  color: #ff6347;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #ff6347;
 }
 
 header ul {
@@ -11059,6 +11068,11 @@ header ul {
   fill: #ffffff;
 }
 
+.gr-orange {
+  background: rgb(243, 114, 59);
+  background: linear-gradient(90deg, rgb(243, 114, 59) 0%, rgb(229, 71, 80) 100%);
+}
+
 span.capitalize {
   text-transform: capitalize;
   font-style: italic;
@@ -11069,6 +11083,7 @@ span.capitalize {
   width: 100%;
   -o-object-fit: none;
      object-fit: none;
+  filter: brightness(0.5);
 }
 
 #text-hero {
@@ -11081,7 +11096,6 @@ span.capitalize {
 #text-hero span {
   font-size: 3rem;
   color: #fff;
-  text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.2), 2px 1px 1px rgba(0, 0, 0, 0.2), 1px 2px 1px rgba(0, 0, 0, 0.2), 3px 2px 1px rgba(0, 0, 0, 0.2), 2px 3px 1px rgba(0, 0, 0, 0.2), 4px 3px 1px rgba(0, 0, 0, 0.2), 3px 4px 1px rgba(0, 0, 0, 0.2), 5px 4px 1px rgba(0, 0, 0, 0.2), 4px 5px 1px rgba(0, 0, 0, 0.2), 6px 5px 1px rgba(0, 0, 0, 0.2), 5px 6px 1px rgba(0, 0, 0, 0.2), 7px 6px 1px rgba(0, 0, 0, 0.2);
 }
 
 #text-hero a {
@@ -11090,6 +11104,14 @@ span.capitalize {
 
 #hero {
   height: 600px;
+}
+
+#hero img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.4);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .my-grid-element {
@@ -11166,7 +11188,7 @@ div#order-now img {
 
 div#menu div.items {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
 }
 
@@ -11177,8 +11199,18 @@ div#menu div.items div.item {
   transition: transform 0.2s ease-in-out;
 }
 
+div#menu div.items div.item:hover {
+  transform: translateY(-0.5rem);
+  cursor: pointer;
+}
+
 div#menu div.items div.item.my-not-visible {
   opacity: 0.3;
+}
+
+div#menu div.items div.item.my-not-visible:hover {
+  transform: none;
+  cursor: initial;
 }
 
 nav {
@@ -11193,8 +11225,12 @@ nav.onScroll {
   background-color: #fff;
 }
 
-nav.onScroll ul li a {
+nav.onScroll a {
   color: #000 !important;
+}
+
+nav.onScroll #logo {
+  color: #ff6347 !important;
 }
 
 nav ul {
@@ -11212,16 +11248,23 @@ nav ul li {
 }
 
 .footer-image {
-  width: 200px;
+  width: 100%;
   height: 200px;
-  background-size: contain;
-  background-image: url(/images/recipe-fast-delivery.png?9d5f3d3824ef9be09d7acd6d2aa27f99);
+}
+
+.footer-image img {
+  height: 100%;
+  width: 200px;
 }
 
 .copyright-bar {
-  width: 100vw;
-  height: 35px;
-  background-color: rgb(100, 190, 121);
+  width: 100%;
+  background-color: tomato;
+}
+
+a > i,
+li > i {
+  color: #ff6347;
 }
 
 @media (max-width: 480px) {
@@ -11256,6 +11299,10 @@ nav ul li {
 
   div#menu div.items {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  div#footer-link {
+    text-align: center;
   }
 }
 

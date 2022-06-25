@@ -1931,8 +1931,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
@@ -2453,48 +2451,44 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      { staticClass: "position-relative bg-dark", attrs: { id: "hero" } },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "text-center my-py-13 text-white position-absolute",
-            attrs: { id: "text-hero" },
-          },
-          [
-            _c("h1", [_vm._v("Cerca")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              {
-                attrs: { name: "types", id: "types" },
-                on: { change: _vm.sendTypes },
-              },
-              [
-                _c("option", [_vm._v("-- Scegli la tipologia --")]),
-                _vm._v(" "),
-                _vm._l(_vm.types, function (type, index) {
-                  return _c(
-                    "option",
-                    { key: index, domProps: { value: type.id } },
-                    [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(type.nome) +
-                          "\n                "
-                      ),
-                    ]
-                  )
-                }),
-              ],
-              2
-            ),
-          ]
-        ),
-      ]
-    ),
+    _c("div", { staticClass: "position-relative", attrs: { id: "hero" } }, [
+      _c(
+        "div",
+        {
+          staticClass: "text-center my-py-13 text-white position-absolute",
+          attrs: { id: "text-hero" },
+        },
+        [
+          _c("h1", [_vm._v("Cerca")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              attrs: { name: "types", id: "types" },
+              on: { change: _vm.sendTypes },
+            },
+            [
+              _c("option", [_vm._v("-- Scegli la tipologia --")]),
+              _vm._v(" "),
+              _vm._l(_vm.types, function (type, index) {
+                return _c(
+                  "option",
+                  { key: index, domProps: { value: type.id } },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(type.nome) +
+                        "\n                "
+                    ),
+                  ]
+                )
+              }),
+            ],
+            2
+          ),
+        ]
+      ),
+    ]),
   ])
 }
 var staticRenderFns = []
@@ -14702,6 +14696,28 @@ var app = new Vue({
     return h(_views_Search__WEBPACK_IMPORTED_MODULE_0__["default"]);
   }
 });
+new Vue({
+  el: "#navbar",
+  data: function data() {
+    return {
+      view: {
+        topOfPage: true
+      }
+    };
+  },
+  beforeMount: function beforeMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll: function handleScroll() {
+      if (window.pageYOffset > 0) {
+        if (this.view.topOfPage) this.view.topOfPage = false;
+      } else {
+        if (!this.view.topOfPage) this.view.topOfPage = true;
+      }
+    }
+  }
+});
 
 /***/ }),
 
@@ -14781,11 +14797,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\ekapr\Desktop\Boolean\deliveboo\resources\js\front-search.js */"./resources/js/front-search.js");
-=======
 module.exports = __webpack_require__(/*! /Users/luca/Desktop/deliveboo/resources/js/front-search.js */"./resources/js/front-search.js");
->>>>>>> master
 
 
 /***/ })

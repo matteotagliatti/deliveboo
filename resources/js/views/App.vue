@@ -93,7 +93,7 @@
                         id="cta-text"
                         class="text-white d-flex justify-content-center flex-column ml-4"
                     >
-                        <span>FOOYES DELIVERY</span>
+                        <span>DELIVEBOO DELIVERY</span>
                         <h1>Hai un ristorante?</h1>
                         <h3 class="mb-4">Enjoy a tasty food in minutes!</h3>
                         <a

@@ -2762,12 +2762,17 @@ var staticRenderFns = [
       },
       [
         _c("span", { staticClass: "d-block" }, [
-          _vm._v("Cerca i tuoi cibi preferiti"),
+          _vm._v("Cerca i tuoi piatti preferiti"),
         ]),
         _vm._v(" "),
-        _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-          _vm._v("Tutti i ristoranti"),
-        ]),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-sm gr-orange text-white rounded-lg",
+            attrs: { href: "/ristoranti" },
+          },
+          [_vm._v("Tutti i ristoranti")]
+        ),
       ]
     )
   },
@@ -2796,15 +2801,17 @@ var staticRenderFns = [
               attrs: { id: "cta-text" },
             },
             [
-              _c("span", [_vm._v("FOOYES DELIVERY")]),
+              _c("span", [_vm._v("DELIVEBOO DELIVERY")]),
               _vm._v(" "),
               _c("h1", [_vm._v("Hai un ristorante?")]),
               _vm._v(" "),
               _c("h3", { staticClass: "mb-4" }, [
-                _vm._v("Enjoy a tasty food in minutes!"),
+                _vm._v("Scopri tutti i vantaggi della"),
+                _c("br"),
+                _vm._v("consegna a domicilio!"),
               ]),
               _vm._v(" "),
-              _c("a", { staticClass: "btn btn-warning w-50" }, [
+              _c("a", { staticClass: "btn gr-orange text-white w-50" }, [
                 _vm._v("Registrati"),
               ]),
             ]
@@ -2930,7 +2937,7 @@ var staticRenderFns = [
                 ),
               ]),
               _vm._v(" "),
-              _c("a", { staticClass: "btn btn-warning w-50" }, [
+              _c("a", { staticClass: "btn gr-orange text-white w-50" }, [
                 _vm._v("Ordina"),
               ]),
             ]
@@ -15245,11 +15252,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\ekapr\Desktop\Boolean\deliveboo\resources\js\front.js */"./resources/js/front.js");
-=======
 module.exports = __webpack_require__(/*! /Users/luca/Desktop/deliveboo/resources/js/front.js */"./resources/js/front.js");
->>>>>>> master
 
 
 /***/ })
