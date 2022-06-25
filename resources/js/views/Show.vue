@@ -141,7 +141,6 @@ export default {
             userIndirizzo: null,
             userTelefono: null,
             userEmail: null,
-            userDatetime: "2023-10-16 10:45:01" /* DATA E ORA ATTUALE */,
             responseMessage: null,
         };
     },

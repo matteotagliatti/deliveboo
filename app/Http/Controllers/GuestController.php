@@ -45,7 +45,7 @@ class GuestController extends Controller
             $order->user_id = $request->restaurantId;
             $order->prezzo = $amount;
             $order->indirizzo = $request->userIndirizzo;
-            $order->data_e_ora = $request->userDatetime;
+            $order->data_e_ora = date("Y-m-d H:i:s");
             $order->nome = $userName;
             $order->cognome = $request->userSurname;
             $order->telefono = $request->userTelefono;
