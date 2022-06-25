@@ -62,13 +62,11 @@
                 <p>Totale incassi: <strong>{{ $total }} €</strong></p>
                 <div class="row">
                     <div class="col-6">
-                        <p>Ordini per mese</p>
                         <div>
                             <canvas id="myChart"></canvas>
                         </div>
                     </div>
                     <div class="col-6">
-                        <p>Ordini per anno</p>
                         <div>
                             <canvas id="myChart2"></canvas>
                         </div>
@@ -116,7 +114,7 @@
         const data = {
             labels: labels,
             datasets: [{
-                label: 'Ordini ricevuti',
+                label: 'Ordini per mese',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: [monthsCount['01'], monthsCount['02'], monthsCount['03'], monthsCount['04'], monthsCount[
@@ -147,7 +145,7 @@
         const data2 = {
             labels: labels2,
             datasets: [{
-                label: 'Ordini ricevuti dopo il 2020',
+                label: 'Ordini per anno',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: [yearsCount['2020'], yearsCount['2021'], yearsCount['2022']]
