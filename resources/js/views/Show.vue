@@ -14,7 +14,7 @@
         <div class="container py-5" id="menu">
             <div class="row">
                 <!-- Menu -->
-                <div class="col-12 col-sm-8 mb-5">
+                <div class="col-12 col-md-8 mb-5">
                     <h2>Menu</h2>
                     <p class="mb-4">
                         Clicca sui singoli piatti per aggiungerli al carrello.
@@ -36,39 +36,39 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Checkout -->
-            <div class="col-4">
-                <div class="container">
-                    <h2 class="mb-4">Carrello</h2>
-                    <table class="table" v-if="cart.length > 0">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Prezzo</th>
-                                <th scope="col">Rimuovi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="(dish, index) in cart" :key="index">
-                                <td>{{ dish.nome }}</td>
-                                <td>{{ dish.prezzo }} €</td>
-                                <td>
-                                    <button
-                                        class="btn btn-sm btn-danger"
-                                        @click="removeFromCart(dish)"
-                                    >
-                                        Rimuovi
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Totale</th>
-                                <td>{{ totalTwoDecimals }} €</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- Checkout -->
+                <div class="col-12 col-md-4">
+                    <div class="container">
+                        <h2 class="mb-4">Carrello</h2>
+                        <table class="table" v-if="cart.length > 0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Prezzo</th>
+                                    <th scope="col">Rimuovi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(dish, index) in cart" :key="index">
+                                    <td>{{ dish.nome }}</td>
+                                    <td>{{ dish.prezzo }} €</td>
+                                    <td>
+                                        <button
+                                            class="btn btn-sm btn-danger"
+                                            @click="removeFromCart(dish)"
+                                        >
+                                            Rimuovi
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Totale</th>
+                                    <td>{{ totalTwoDecimals }} €</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
