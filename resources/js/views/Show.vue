@@ -101,6 +101,7 @@ export default {
         },
         save() {
             localStorage.setItem("cart", JSON.stringify(this.cart));
+            localStorage.setItem("total", this.total);
         },
     },
     mounted() {
@@ -119,8 +120,10 @@ export default {
         if (localStorage.getItem("cart")) {
             try {
                 this.cart = JSON.parse(localStorage.getItem("cart"));
+                this.total = parseFloat(localStorage.getItem("total"));
             } catch (e) {
                 localStorage.removeItem("cart");
+                localStorage.removeItem("total");
             }
         }
     },
