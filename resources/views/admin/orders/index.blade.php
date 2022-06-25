@@ -1,3 +1,5 @@
+@php $total = 0; @endphp
+
 @extends('layouts.app')
 
 @section('content')
@@ -14,9 +16,9 @@
                 <table class="table mb-5">
                     <thead>
                         <tr>
-                            <th scope="col">ID Ordine</th>
+                            <th scope="col">ID</th>
                             <th scope="col">Piatti (Quantità)</th>
-                            <th scope="col">Prezzo</th>
+                            <th scope="col">Prezzo in €</th>
                             <th scope="col">Indirizzo</th>
                             <th scope="col">Data e Ora</th>
                             <th scope="col">Nome</th>
@@ -35,6 +37,7 @@
                                     @endforeach
                                 </td>
                                 <td scope="row">{{ $order->prezzo }}</td>
+                                @php $total += floatval($order->prezzo); @endphp
                                 <td scope="row">{{ $order->indirizzo }}</td>
                                 <td scope="row" class="datetime">{{ $order->data_e_ora }}</td>
                                 <td scope="row">{{ $order->nome }}</td>
@@ -55,7 +58,8 @@
         <div class="row">
             <div class="col-12">
                 <h1>Statistiche</h1>
-                <p>Totale ordini: {{ count($orders) }}</p>
+                <p>Totale ordini: <strong>{{ count($orders) }}</strong></p>
+                <p>Totale incassi: <strong>{{ $total }} €</strong></p>
                 <div class="row">
                     <div class="col-6">
                         <p>Ordini per mese</p>
