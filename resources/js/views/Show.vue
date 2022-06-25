@@ -71,6 +71,11 @@
                         <!--  -->
                         <div v-if="cart.length > 0">
                             <h3>Checkout</h3>
+                            <input
+                                type="text"
+                                v-model="userName"
+                                placeholder="nome"
+                            />
                             <v-braintree
                                 authorization="sandbox_q745yw9z_7wbb5qxhqhm6qydj"
                                 @success="onSuccess"
@@ -96,9 +101,7 @@ export default {
             cart: [],
             total: 0,
             authTokem: "sandbox_q745yw9z_7wbb5qxhqhm6qydj",
-            token: document
-                .querySelector('meta[name="csrf-token"]')
-                .getAttribute("content"),
+            userName: null,
         };
     },
     methods: {
@@ -120,6 +123,8 @@ export default {
             console.log("Success!", payload);
             axios
                 .post("/checkout", {
+                    nonce: payload.nonce,
+                    userName: this.userName,
                     total: this.total.toFixed(2),
                 })
                 .then((response) => {

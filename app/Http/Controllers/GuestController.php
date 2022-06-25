@@ -19,23 +19,31 @@ class GuestController extends Controller
     {
 
         $amount = $request->total;
-        return response()->json([
-            'message' => $amount
-        ]);
+        $nonce = $request->nonce;
+        $userName = $request->userName;
 
-        /* $amount = $request->total;
-        return view('guests.index', compact('amount')); */
-
-        /* $gateway = new \Braintree\Gateway([
+        $gateway = new \Braintree\Gateway([
             'environment' => env('BRAINTREE_ENV'),
             'merchantId' => env('BRAINTREE_MERCHANT_ID'),
             'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
             'privateKey' => env('BRAINTREE_PRIVATE_KEY')
         ]);
 
-        $amount = $request->amount;
-        $name = $request->name;
-        $nonce = $request->payment_method_nonce;
+        $result = $gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $nonce,
+            'customer' => [
+                'firstName' => $userName,
+            ],
+        ]);
+
+        return response()->json([
+            'message' => $userName
+        ]);
+
+        
+
+        /* 
 
         $result = $gateway->transaction()->sale([
             'amount' => $amount,
