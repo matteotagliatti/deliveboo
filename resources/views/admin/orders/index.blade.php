@@ -55,6 +55,7 @@
         <div class="row">
             <div class="col-12">
                 <h1>Statistiche</h1>
+                <p>Totale ordini: {{ count($orders) }}</p>
                 <div class="row">
                     <div class="col-6">
                         <p>Ordini per mese</p>
