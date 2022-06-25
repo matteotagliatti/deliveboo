@@ -92,10 +92,15 @@ export default {
         addToCart(dish) {
             this.cart.push(dish);
             this.total += parseFloat(dish.prezzo);
+            this.save();
         },
         removeFromCart(dish) {
             this.cart.splice(this.cart.indexOf(dish), 1);
             this.total -= parseFloat(dish.prezzo);
+            this.save();
+        },
+        save() {
+            localStorage.setItem("cart", JSON.stringify(this.cart));
         },
     },
     mounted() {
@@ -110,6 +115,14 @@ export default {
             .catch((error) => {
                 console.log(error);
             });
+
+        if (localStorage.getItem("cart")) {
+            try {
+                this.cart = JSON.parse(localStorage.getItem("cart"));
+            } catch (e) {
+                localStorage.removeItem("cart");
+            }
+        }
     },
     computed: {
         // this.total with only two numbers after the decimal point
