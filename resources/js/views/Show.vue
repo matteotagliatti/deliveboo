@@ -82,6 +82,11 @@
                                 @error="onError"
                             ></v-braintree>
                         </div>
+                        <div v-if="responseMessage && cart.length == 0">
+                            <p class="text-success font-weight-bold">
+                                {{ responseMessage }}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -100,8 +105,8 @@ export default {
             restaurant: null,
             cart: [],
             total: 0,
-            authTokem: "sandbox_q745yw9z_7wbb5qxhqhm6qydj",
             userName: null,
+            responseMessage: null,
         };
     },
     methods: {
@@ -128,7 +133,9 @@ export default {
                     total: this.total.toFixed(2),
                 })
                 .then((response) => {
-                    console.log(response.data.message);
+                    this.cart = [];
+                    this.total = 0;
+                    this.responseMessage = response.data.message;
                 });
         },
         onError(error) {

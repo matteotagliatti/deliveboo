@@ -37,33 +37,18 @@ class GuestController extends Controller
             ],
         ]);
 
-        return response()->json([
-            'message' => $userName
-        ]);
-
-        
-
-        /* 
-
-        $result = $gateway->transaction()->sale([
-            'amount' => $amount,
-            'paymentMethodNonce' => $nonce,
-            'customer' => [
-                'firstName' => $name,
-            ],
-        ]);
-
         if($result->success) {
             $transaction = $result->transaction;
 
-            return view('checkout', [
-                'message' => "Transaction successful. The ID is' $transaction->id",
-                'amount' => $transaction->amount,
-                'name' => $transaction->customer['firstName']
+            return response()->json([
+                'message' => 'Transazione andata a buon fine. L\'ID è' . $transaction->id,
             ]);
         } else {
-            return view('checkout') ->withErrors('An error occurred: ');
-      }; */
+            return response()->json([
+                'message' => 'Transazione non andata a buon fine.'
+            ]);
+      };
+        
     }
 
     public function restaurants(){
