@@ -203,5 +203,37 @@
         }
 
         piva.onchange = checkPIVA;
+
+        /* Controllo Tipologie */
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+
+        function checkTypes() {
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    removeSetCustomValidity()
+                    return;
+                }
+
+                if (!checkboxes[i].checked) {
+                    checkboxes[i].setCustomValidity('seleziona qualcosa')
+                }
+            }
+        }
+
+        function removeSetCustomValidity() {
+            for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].setCustomValidity('')
+                console.log('rimosso');
+            }
+        }
+
+        checkboxes.forEach(checkbox => {
+            checkbox.onchange = checkTypes;
+        });
+
+        window.onload = function() {
+            checkTypes();
+        };
     </script>
 @endsection

@@ -9,7 +9,7 @@
                 id="text-hero"
                 class="text-center my-py-13 text-white position-absolute"
             >
-                <span class="d-block">Cerca i tuoi cibi preferiti</span>
+                <span class="d-block">Cerca i tuoi piatti preferiti</span>
                 <a
                     href="/cerca"
                     class="btn btn-sm gr-orange text-white rounded-lg"
@@ -95,7 +95,9 @@
                     >
                         <span>DELIVEBOO DELIVERY</span>
                         <h1>Hai un ristorante?</h1>
-                        <h3 class="mb-4">Enjoy a tasty food in minutes!</h3>
+                        <h3 class="mb-4">
+                            Scopri tutti i vantaggi della consegna a domicilio!
+                        </h3>
                         <a
                             href="/register"
                             class="btn gr-orange text-white w-50"
