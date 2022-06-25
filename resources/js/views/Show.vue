@@ -118,9 +118,13 @@ export default {
         },
         onSuccess(payload) {
             console.log("Success!", payload);
-            axios.post("/checkout", {
-                total: this.total,
-            });
+            axios
+                .post("/checkout", {
+                    total: this.total,
+                })
+                .then((response) => {
+                    console.log(response.data.message);
+                });
         },
         onError(error) {
             let message = error.message;

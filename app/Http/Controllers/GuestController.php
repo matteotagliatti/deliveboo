@@ -17,10 +17,13 @@ class GuestController extends Controller
 
     public function checkout(Request $request)
     {
-        $amount = $request->total;
-        return view('guests.index', compact('amount'));
-        dd($request->all());
-        dump($request->all());
+
+        return response()->json([
+            'message' => 'Message from GuestController@index'
+        ]);
+
+        /* $amount = $request->total;
+        return view('guests.index', compact('amount')); */
 
         /* $gateway = new \Braintree\Gateway([
             'environment' => env('BRAINTREE_ENV'),
@@ -49,9 +52,9 @@ class GuestController extends Controller
                 'amount' => $transaction->amount,
                 'name' => $transaction->customer['firstName']
             ]);
-        } else { */
-            return view('checkout')/* ->withErrors('An error occurred: ') */;
-     /*    }; */
+        } else {
+            return view('checkout') ->withErrors('An error occurred: ');
+      }; */
     }
 
     public function restaurants(){
