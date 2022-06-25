@@ -105,7 +105,16 @@
                                 v-model="userEmail"
                                 placeholder="Email*"
                                 required
+                                @keyup="validateEmail(userEmail)"
                             />
+                            <small
+                                class="text-danger"
+                                v-if="
+                                    validateEmailMessage == 'Email non valida'
+                                "
+                            >
+                                {{ validateEmailMessage }}
+                            </small>
                             <v-braintree
                                 authorization="sandbox_q745yw9z_7wbb5qxhqhm6qydj"
                                 @success="onSuccess"
@@ -141,6 +150,7 @@ export default {
             userIndirizzo: null,
             userTelefono: null,
             userEmail: null,
+            validateEmailMessage: null,
             responseMessage: null,
         };
     },
@@ -182,6 +192,13 @@ export default {
         onError(error) {
             let message = error.message;
             // Whoops, an error has occured while trying to get the nonce
+        },
+        validateEmail(value) {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+                this.validateEmailMessage = "Email valida";
+            } else {
+                this.validateEmailMessage = "Email non valida";
+            }
         },
     },
     mounted() {
