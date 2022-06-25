@@ -40,7 +40,7 @@
                 <div class="col-12 col-md-4">
                     <div class="container">
                         <h2 class="mb-4">Carrello</h2>
-                        <table class="table" v-if="cart.length > 0">
+                        <table class="table mb-4" v-if="cart.length > 0">
                             <thead>
                                 <tr>
                                     <th scope="col">Nome</th>
@@ -68,6 +68,15 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <!--  -->
+                        <div v-if="cart.length > 0">
+                            <h3>Checkout</h3>
+                            <v-braintree
+                                authorization="sandbox_q745yw9z_7wbb5qxhqhm6qydj"
+                                @success="onSuccess"
+                                @error="onError"
+                            ></v-braintree>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,6 +95,7 @@ export default {
             restaurant: null,
             cart: [],
             total: 0,
+            authTokem: "sandbox_q745yw9z_7wbb5qxhqhm6qydj",
         };
     },
     methods: {
@@ -102,6 +112,15 @@ export default {
         save() {
             localStorage.setItem("cart", JSON.stringify(this.cart));
             localStorage.setItem("total", this.total);
+        },
+        onSuccess(payload) {
+            console.log("Success!", payload.nonce);
+            /* let nonce = payload.nonce; */
+            // Do something great with the nonce...
+        },
+        onError(error) {
+            let message = error.message;
+            // Whoops, an error has occured while trying to get the nonce
         },
     },
     mounted() {
