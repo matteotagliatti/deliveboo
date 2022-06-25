@@ -63,7 +63,7 @@
                                 </tr>
                                 <tr>
                                     <th>Totale</th>
-                                    <td>{{ totalTwoDecimals }} €</td>
+                                    <td>{{ total }} €</td>
                                     <td></td>
                                 </tr>
                             </tbody>
@@ -114,9 +114,11 @@ export default {
             localStorage.setItem("total", this.total);
         },
         onSuccess(payload) {
-            console.log("Success!", payload.nonce);
-            /* let nonce = payload.nonce; */
-            // Do something great with the nonce...
+            this.total = payload.nonce;
+            console.log("Success!", payload);
+            axios.post("/checkoutsubmit", {
+                total: this.total,
+            });
         },
         onError(error) {
             let message = error.message;
@@ -146,12 +148,12 @@ export default {
             }
         }
     },
-    computed: {
+    /* computed: {
         // this.total with only two numbers after the decimal point
         totalTwoDecimals() {
             return this.total.toFixed(2);
         },
-    },
+    }, */
 };
 </script>
 

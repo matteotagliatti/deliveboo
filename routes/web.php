@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::post('checkoutsubmit','CheckoutController@index');
+Route::get('checkout','CheckoutController@index');
+
+
 Route::get('register', 'Auth\RegisterController@chooseType')->name('register');
 
 Route::middleware('auth')->group(function() {
