@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Braintree_Transaction;
+use App\Order;
 
 class GuestController extends Controller
 {
@@ -39,6 +40,17 @@ class GuestController extends Controller
 
         if($result->success) {
             $transaction = $result->transaction;
+
+            $order = new Order();
+            $order->user_id = $request->restaurantId;
+            $order->prezzo = $amount;
+            $order->indirizzo = $request->userIndirizzo;
+            $order->data_e_ora = $request->userDatetime;
+            $order->nome = $userName;
+            $order->cognome = $request->userSurname;
+            $order->telefono = $request->userTelefono;
+            $order->email = $request->userEmail;
+            $order->save();
 
             return response()->json([
                 'message' => 'Transazione andata a buon fine. L\'ID è' . $transaction->id,

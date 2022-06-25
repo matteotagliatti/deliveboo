@@ -72,9 +72,39 @@
                         <div v-if="cart.length > 0">
                             <h3>Checkout</h3>
                             <input
+                                class="form-control"
                                 type="text"
                                 v-model="userName"
-                                placeholder="nome"
+                                placeholder="Nome*"
+                                required
+                            />
+                            <input
+                                class="form-control"
+                                type="text"
+                                v-model="userSurname"
+                                placeholder="Cognome*"
+                                required
+                            />
+                            <input
+                                class="form-control"
+                                type="text"
+                                v-model="userIndirizzo"
+                                placeholder="Indirizzo*"
+                                required
+                            />
+                            <input
+                                class="form-control"
+                                type="text"
+                                v-model="userTelefono"
+                                placeholder="Numero di telefono*"
+                                required
+                            />
+                            <input
+                                class="form-control"
+                                type="text"
+                                v-model="userEmail"
+                                placeholder="Email*"
+                                required
                             />
                             <v-braintree
                                 authorization="sandbox_q745yw9z_7wbb5qxhqhm6qydj"
@@ -105,7 +135,13 @@ export default {
             restaurant: null,
             cart: [],
             total: 0,
+            id: null,
             userName: null,
+            userSurname: null,
+            userIndirizzo: null,
+            userTelefono: null,
+            userEmail: null,
+            userDatetime: "2023-10-16 10:45:01" /* DATA E ORA ATTUALE */,
             responseMessage: null,
         };
     },
@@ -129,8 +165,14 @@ export default {
             axios
                 .post("/checkout", {
                     nonce: payload.nonce,
-                    userName: this.userName,
                     total: this.total.toFixed(2),
+                    restaurantId: this.id,
+                    userName: this.userName,
+                    userSurname: this.userSurname,
+                    userIndirizzo: this.userIndirizzo,
+                    userTelefono: this.userTelefono,
+                    userEmail: this.userEmail,
+                    userDatetime: this.userDatetime,
                 })
                 .then((response) => {
                     this.cart = [];
@@ -146,6 +188,7 @@ export default {
     mounted() {
         const url = window.location.href;
         const id = url.substring(url.lastIndexOf("/") + 1);
+        this.id = id;
 
         axios
             .get(`/api/users/${id}`)
