@@ -1,12 +1,10 @@
 <template>
     <div>
-        <div id="hero" class="position-relative bg-dark">
-            <div
-                id="text-hero"
-                class="text-center my-py-13 text-white position-absolute"
-            >
+        <div id="hero" class="position-relative">
+
+            <div  id="text-hero" class="text-center my-py-13 text-white position-absolute" >
                 <h1>Cerca</h1>
-                <select name="types" id="types" @change="sendTypes">
+                 <select name="types" id="types" @change="sendTypes">
                     <option>-- Scegli la tipologia --</option>
                     <option
                         v-for="(type, index) in types"

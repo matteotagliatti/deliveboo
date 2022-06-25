@@ -2,6 +2,7 @@
     "/js/admin.js": "/js/admin.js",
     "/css/app.css": "/css/app.css",
     "/js/front.js": "/js/front.js",
+    "/js/front-restaurants.js": "/js/front-restaurants.js",
     "/js/front-search.js": "/js/front-search.js",
     "/js/front-show.js": "/js/front-show.js"
 }

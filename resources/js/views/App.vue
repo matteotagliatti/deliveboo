@@ -9,7 +9,7 @@
                 id="text-hero"
                 class="text-center my-py-13 text-white position-absolute"
             >
-                <span class="d-block">Cerca i tuoi cibi preferiti</span>
+                <span class="d-block">Cerca i tuoi piatti preferiti</span>
                 <a class="btn btn-sm gr-orange text-white rounded-lg" href="/ristoranti">Tutti i ristoranti</a>
             </div>
             <div class="custom-shape-divider-bottom-1655826606">
@@ -89,9 +89,9 @@
                         id="cta-text"
                         class="text-white d-flex justify-content-center flex-column ml-4"
                     >
-                        <span>FOOYES DELIVERY</span>
+                        <span>DELIVEBOO DELIVERY</span>
                         <h1>Hai un ristorante?</h1>
-                        <h3 class="mb-4">Enjoy a tasty food in minutes!</h3>
+                        <h3 class="mb-4">Scopri tutti i vantaggi della<br>consegna a domicilio!</h3>
                         <a class="btn gr-orange text-white w-50">Registrati</a>
                     </div>
                 </div>
