@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Braintree_Transaction;
 use App\Order;
+use App\User;
 
 class GuestController extends Controller
 {
@@ -12,8 +13,9 @@ class GuestController extends Controller
         return view('guests.index');
     }
 
-    public function show() {
-        return view('guests.show');
+    public function show($id) {
+        $user = User::find($id);
+        return view('guests.show', compact('user'));
     }
 
     public function checkout(Request $request)

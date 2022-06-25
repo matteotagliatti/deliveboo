@@ -18,6 +18,9 @@
                     <h2>Menu</h2>
                     <p class="mb-4">
                         Clicca sui singoli piatti per aggiungerli al carrello.
+                        <span class="only-mobile"
+                            >Carrello dopo tutti i piatti.</span
+                        >
                     </p>
                     <div class="items">
                         <div
@@ -27,7 +30,9 @@
                             :class="
                                 dish.visibilita == 0 ? 'my-not-visible' : ''
                             "
-                            @click="dish.visibilita == 1 ? addToCart(dish) : ''"
+                            @click="
+                                [dish.visibilita == 1 ? addToCart(dish) : '']
+                            "
                         >
                             <h3>{{ dish.nome }}</h3>
                             <p>Descrizione: {{ dish.descrizione }}</p>

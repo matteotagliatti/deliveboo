@@ -22,9 +22,9 @@
                                 </span>
 
                                 <h3 class="font-weight-bold">{{ $user->nome }}</h3>
-                                <h5 class="text-secondary font-weight-light">
+                                <p class="text-secondary font-weight-light">
                                     {{ $user->indirizzo }}
-                                </h5>
+                                </p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-chevron-right"></i>

@@ -1,7 +1,7 @@
 @extends ('layouts.front')
 
 @section('title')
-    Show
+    {{ $user->nome }}
 @endsection
 
 @section('content')
