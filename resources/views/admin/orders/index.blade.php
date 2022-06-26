@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Piatti (Quantità)</th>
+                            <th scope="col">Piatti</th>
                             <th scope="col">Prezzo in €</th>
                             <th scope="col">Indirizzo</th>
                             <th scope="col">Data e Ora</th>
@@ -33,7 +33,7 @@
                                 <th scope="row">{{ $order->id }}</th>
                                 <td scope="row">
                                     @foreach ($order->dishes as $dish)
-                                        {{ $dish->nome }} ({{ $dish->pivot->quantita }})<br>
+                                        {{ $dish->nome }}<br>
                                     @endforeach
                                 </td>
                                 <td scope="row">{{ $order->prezzo }}</td>
