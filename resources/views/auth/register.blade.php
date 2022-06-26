@@ -117,10 +117,10 @@
 
                             <div class="form-group row">
                                 <label for="immagine"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine (.png)') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="immagine" type="file" accept="image/*"
+                                    <input id="immagine" type="file" accept="image/png"
                                         class="form-control @error('immagine') is-invalid @enderror" name="immagine"
                                         value="{{ old('immagine') }}" autocomplete="immagine" autofocus>
 
