@@ -42,9 +42,9 @@
                         <h3 class="mb-3">Restiamo in contatto</h3>
                         <p>Invia la tua email per essere sempre aggiornato!</p>
                     </li>
-                    <li>
-                        <input type="email" name="email" id="email">
-                        <input type="submit" value="Invia">
+                    <li class="d-flex">
+                        <input class="form-control" type="email" placeholder="Inserisci la tua email">
+                        <input class="btn text-white gr-orange" type="submit" value="Invia">
                     </li>
                 </ul>
             </div>
@@ -55,7 +55,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="mt-2">
-                    <p class="mb-2 text-white">Made with <i class="fas fa-heart text-danger"></i> by <a class="text-white">dreamTeam #55</a></p>
+                    <p class="mb-2 text-white">Made with <i class="fas fa-heart text-danger"></i> by <a
+                            class="text-white">dreamTeam #55</a></p>
                 </div>
 
             </div>

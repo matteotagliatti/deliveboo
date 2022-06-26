@@ -12,7 +12,7 @@
                 <span class="d-block">Cerca i tuoi piatti preferiti</span>
                 <a
                     href="/cerca"
-                    class="btn btn-sm gr-orange text-white rounded-lg"
+                    class="btn btn-sm gr-orange text-white rounded-lg w-25"
                     >Cerca</a
                 >
             </div>
@@ -67,14 +67,14 @@
                                 <h3 class="font-weight-bold">
                                     {{ restaurant.nome }}
                                 </h3>
-                                <h5 class="text-secondary font-weight-light">
+                                <p class="text-secondary font-weight-light">
                                     <strong
                                         ><i
                                             class="fa-solid fa-location-dot"
                                         ></i>
                                         {{ restaurant.indirizzo }}
                                     </strong>
-                                </h5>
+                                </p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-chevron-right"></i>
@@ -100,7 +100,7 @@
                         </h3>
                         <a
                             href="/register"
-                            class="btn gr-orange text-white w-50"
+                            class="btn gr-orange text-white w-25"
                             >Registrati</a
                         >
                     </div>

@@ -23,6 +23,7 @@
 
                                 <h3 class="font-weight-bold">{{ $user->nome }}</h3>
                                 <p class="text-secondary font-weight-light">
+                                    <i class="fa-solid fa-location-dot"></i>
                                     {{ $user->indirizzo }}
                                 </p>
                             </div>
