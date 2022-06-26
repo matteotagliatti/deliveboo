@@ -54,6 +54,10 @@ class GuestController extends Controller
             $order->email = $request->userEmail;
             $order->save();
 
+            // Select current order model
+            $currentOrder = Order::find($order->id);
+            $currentOrder->dishes()->attach($request->dishIdsArray);
+
             return response()->json([
                 'message' => 'Transazione andata a buon fine. ID: ' . $transaction->id,
             ]);

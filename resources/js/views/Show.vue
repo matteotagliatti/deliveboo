@@ -169,11 +169,13 @@ export default {
             userEmail: null,
             validateEmailMessage: null,
             responseMessage: null,
+            dishIdsArray: [],
         };
     },
     methods: {
         addToCart(dish) {
             this.cart.push(dish);
+            this.dishIdsArray.push(dish.id);
             this.total += parseFloat(dish.prezzo);
             this.save();
         },
@@ -188,7 +190,6 @@ export default {
             localStorage.setItem("id", this.id);
         },
         onSuccess(payload) {
-            console.log("Success!", payload);
             axios
                 .post("/checkout", {
                     nonce: payload.nonce,
@@ -199,7 +200,7 @@ export default {
                     userIndirizzo: this.userIndirizzo,
                     userTelefono: this.userTelefono,
                     userEmail: this.userEmail,
-                    userDatetime: this.userDatetime,
+                    dishIdsArray: this.dishIdsArray,
                 })
                 .then((response) => {
                     this.cart = [];
@@ -210,7 +211,6 @@ export default {
         },
         onError(error) {
             let message = error.message;
-            // Whoops, an error has occured while trying to get the nonce
         },
         validateEmail(value) {
             if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
