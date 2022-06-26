@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Braintree_Transaction;
 use App\Order;
 use App\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendEmailRistoratore;
+use App\Mail\SendEmailGuest;
 
 class GuestController extends Controller
 {
@@ -57,6 +60,12 @@ class GuestController extends Controller
             // Select current order model
             $currentOrder = Order::find($order->id);
             $currentOrder->dishes()->attach($request->dishIdsArray);
+
+            // Send email to restaurant
+            $restaurant = User::find($request->restaurantId);
+            Mail::to($restaurant->email)->send(new SendEmailRistoratore($currentOrder));
+            // Send email to user
+            Mail::to($request->userEmail)->send(new SendEmailGuest($currentOrder, $restaurant));
 
             return response()->json([
                 'message' => 'Transazione andata a buon fine. ID: ' . $transaction->id,
