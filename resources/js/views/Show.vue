@@ -185,6 +185,7 @@ export default {
         save() {
             localStorage.setItem("cart", JSON.stringify(this.cart));
             localStorage.setItem("total", this.total);
+            localStorage.setItem("id", this.id);
         },
         onSuccess(payload) {
             console.log("Success!", payload);
@@ -230,6 +231,7 @@ export default {
         const url = window.location.href;
         const id = url.substring(url.lastIndexOf("/") + 1);
         this.id = id;
+        /* JSON.parse(localStorage.getItem("id")); */
 
         axios
             .get(`/api/users/${id}`)
@@ -240,13 +242,26 @@ export default {
                 console.log(error);
             });
 
+        if (
+            localStorage.getItem("id") &&
+            localStorage.getItem("id") != this.id
+        ) {
+            console.log(this.id);
+            console.log(localStorage.getItem("id"));
+            localStorage.removeItem("cart");
+            localStorage.removeItem("total");
+            localStorage.removeItem("id");
+        }
+
         if (localStorage.getItem("cart")) {
             try {
                 this.cart = JSON.parse(localStorage.getItem("cart"));
                 this.total = parseFloat(localStorage.getItem("total"));
+                this.id = JSON.parse(localStorage.getItem("id"));
             } catch (e) {
                 localStorage.removeItem("cart");
                 localStorage.removeItem("total");
+                localStorage.removeItem("id");
             }
         }
     },
