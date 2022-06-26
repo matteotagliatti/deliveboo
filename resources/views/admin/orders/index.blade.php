@@ -86,7 +86,6 @@
         const dates = datetimesValues.map(datetime => datetime.split(' ')[0]);
         const years = dates.map(date => date.split('-')[0]);
         const months = dates.map(date => date.split('-')[1]);
-        // set months with no iteration to 0 count every istance of each month in months array
         const monthsCount = months.reduce((acc, curr) => {
             acc[curr] = acc[curr] ? acc[curr] + 1 : 1;
             return acc;
@@ -115,7 +114,7 @@
             labels: labels,
             datasets: [{
                 label: 'Ordini per mese',
-                backgroundColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgb(255, 99, 71)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: [monthsCount['01'], monthsCount['02'], monthsCount['03'], monthsCount['04'], monthsCount[
                         '05'], monthsCount['06'], monthsCount['07'], monthsCount['08'], monthsCount['09'],
@@ -146,7 +145,7 @@
             labels: labels2,
             datasets: [{
                 label: 'Ordini per anno',
-                backgroundColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgb(229, 72, 80)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: [yearsCount['2020'], yearsCount['2021'], yearsCount['2022']]
             }]

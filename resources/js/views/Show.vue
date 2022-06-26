@@ -77,28 +77,28 @@
                         <div v-if="cart.length > 0">
                             <h3>Checkout</h3>
                             <input
-                                class="form-control"
+                                class="form-control mb-2"
                                 type="text"
                                 v-model="userName"
                                 placeholder="Nome*"
                                 required
                             />
                             <input
-                                class="form-control"
+                                class="form-control mb-2"
                                 type="text"
                                 v-model="userSurname"
                                 placeholder="Cognome*"
                                 required
                             />
                             <input
-                                class="form-control"
+                                class="form-control mb-2"
                                 type="text"
                                 v-model="userIndirizzo"
                                 placeholder="Indirizzo*"
                                 required
                             />
                             <input
-                                class="form-control"
+                                class="form-control mb-2"
                                 type="text"
                                 v-model="userTelefono"
                                 placeholder="Numero di telefono*"
@@ -114,7 +114,7 @@
                                 {{ validatePhoneMessage }}
                             </small>
                             <input
-                                class="form-control"
+                                class="form-control mb-2"
                                 type="text"
                                 v-model="userEmail"
                                 placeholder="Email*"
