@@ -18,7 +18,7 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Piatti</th>
-                            <th scope="col">Prezzo in €</th>
+                            <th scope="col">Prezzo</th>
                             <th scope="col">Indirizzo</th>
                             <th scope="col">Data e Ora</th>
                             <th scope="col">Nome</th>

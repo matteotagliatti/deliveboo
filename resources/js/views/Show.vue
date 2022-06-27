@@ -57,14 +57,14 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Nome</th>
-                                    <th scope="col">Prezzo €</th>
+                                    <th scope="col">Prezzo</th>
                                     <th scope="col">Rimuovi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="(dish, index) in cart" :key="index">
                                     <td>{{ dish.nome }}</td>
-                                    <td>{{ dish.prezzo }} €</td>
+                                    <td>{{ dish.prezzo }}</td>
                                     <td>
                                         <button
                                             class="btn btn-sm btn-danger"
