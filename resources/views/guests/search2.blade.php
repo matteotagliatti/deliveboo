@@ -13,7 +13,11 @@
                 <div class="my-grid">
                     @forelse ($usersArray as $user)
                         <a class="my-grid-element d-flex" href="/{{ $user->id }}">
-                            <img src="{{ $user->immagine }}" alt="{{ $user->nome }}" />
+                            @if (str_starts_with($user->immagine, 'http'))
+                                <img src="{{ $user->immagine }}" alt="">
+                            @else
+                                <img src="storage/{{ $user->immagine }}" alt="">
+                            @endif
                             <div class="info-restaurant p-4">
                                 <span>
                                     @foreach ($user->types as $type)

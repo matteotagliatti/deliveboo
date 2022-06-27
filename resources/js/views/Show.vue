@@ -1,7 +1,15 @@
 <template>
     <div v-if="restaurant">
         <div id="hero" class="position-relative bg-dark">
-            <img class="position-absolute" :src="restaurant.immagine" alt="" />
+            <img
+                class="position-absolute"
+                :src="
+                    restaurant.immagine.startsWith('http')
+                        ? `${restaurant.immagine}`
+                        : `storage/${restaurant.immagine}`
+                "
+                alt=""
+            />
             <div
                 id="text-hero"
                 class="text-center my-py-13 text-white position-absolute"
