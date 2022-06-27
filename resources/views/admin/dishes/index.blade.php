@@ -50,7 +50,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($dishes as $dish)
+                    @forelse ($dishes as $dish)
                         <tr>
                             <th scope="row">{{ $loop->index + 1 }}</th>
                             <td>{{ $dish->nome }}</td>
@@ -72,7 +72,13 @@
                                 {{-- <a class="btn btn-danger">Elimina Bella</a> --}}
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="6">
+                                <p>Non hai ancora piatti inseriti. Aggiungine uno.</p>
+                            </td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
