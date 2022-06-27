@@ -333,6 +333,16 @@ li > i {
         height: unset;
     }
 
+    .line-height-small {
+        font-size: 2.5rem !important;
+        line-height: 3rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .button-hero {
+        width: 50% !important;
+    }
+
     header {
         ul {
             margin-left: 0;

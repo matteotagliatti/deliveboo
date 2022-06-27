@@ -57,7 +57,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Nome</th>
-                                    <th scope="col">Prezzo</th>
+                                    <th scope="col">Prezzo €</th>
                                     <th scope="col">Rimuovi</th>
                                 </tr>
                             </thead>
@@ -76,7 +76,7 @@
                                 </tr>
                                 <tr>
                                     <th>Totale</th>
-                                    <td>{{ totalTwoDecimals }} €</td>
+                                    <td>{{ totalTwoDecimals }}</td>
                                     <td></td>
                                 </tr>
                             </tbody>

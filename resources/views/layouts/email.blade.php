@@ -24,7 +24,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <p>DeliveBoo - Grazie per averci scelto!</p>
+                <p>DeliveBoo</p>
             </div>
         </div>
     </div>

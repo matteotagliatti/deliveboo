@@ -9,10 +9,12 @@
                 id="text-hero"
                 class="text-center my-py-13 text-white position-absolute"
             >
-                <span class="d-block">Cerca i tuoi piatti preferiti</span>
+                <span class="d-block line-height-small"
+                    >Cerca i tuoi piatti preferiti</span
+                >
                 <a
                     href="/cerca"
-                    class="btn btn-sm gr-orange text-white rounded-lg w-25"
+                    class="btn btn-sm gr-orange text-white rounded-lg w-25 button-hero"
                     >Cerca</a
                 >
             </div>
@@ -100,7 +102,7 @@
                         </h3>
                         <a
                             href="/register"
-                            class="btn gr-orange text-white w-25"
+                            class="btn gr-orange text-white w-25 button-hero"
                             >Registrati</a
                         >
                     </div>
