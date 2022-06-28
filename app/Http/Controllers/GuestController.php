@@ -68,7 +68,7 @@ class GuestController extends Controller
             Mail::to($request->userEmail)->send(new SendEmailGuest($currentOrder, $restaurant));
 
             return response()->json([
-                'message' => 'Transazione andata a buon fine. ID: ' . $transaction->id,
+                'message' => 'Transazione andata a buon fine. Controlla la tua mail per il riepilogo. ID: ' . $transaction->id,
             ]);
         } else {
             return response()->json([
