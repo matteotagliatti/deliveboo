@@ -19,8 +19,8 @@ class UsersTableSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             $newUser = new User();
-            $newUser->email = $faker->email();
-            $newUser->password = Hash::make("ristorante" . $i);
+            $newUser->email = 'user' . $i . '@mail.com';
+            $newUser->password = Hash::make("restaurant" . $i);
             $newUser->nome = $nomi[$i];
             $newUser->indirizzo = $faker->address();
             $newUser->P_IVA = $faker->numerify('IT###########');
