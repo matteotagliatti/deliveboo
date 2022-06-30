@@ -10990,6 +10990,10 @@ footer {
   color: #ff6347 !important;
 }
 
+.only-mobile {
+  display: none;
+}
+
 a {
   color: #ff6347;
 }
@@ -11188,7 +11192,7 @@ div#order-now img {
 
 div#menu div.items {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
 }
 
@@ -11268,6 +11272,24 @@ li > i {
 }
 
 @media (max-width: 480px) {
+  .only-mobile {
+    display: block;
+  }
+
+  .my-grid-element {
+    height: unset;
+  }
+
+  .line-height-small {
+    font-size: 2.5rem !important;
+    line-height: 3rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .button-hero {
+    width: 50% !important;
+  }
+
   header ul {
     margin-left: 0;
     -webkit-padding-start: 0;

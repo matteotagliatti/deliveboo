@@ -14884,7 +14884,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/luca/Desktop/deliveboo/resources/js/front-restaurants.js */"./resources/js/front-restaurants.js");
+module.exports = __webpack_require__(/*! C:\Users\X95\Code\deliveboo\resources\js\front-restaurants.js */"./resources/js/front-restaurants.js");
 
 
 /***/ })

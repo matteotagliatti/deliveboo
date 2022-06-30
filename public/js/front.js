@@ -2094,6 +2094,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
@@ -2715,7 +2729,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c(
-                        "h5",
+                        "p",
                         { staticClass: "text-secondary font-weight-light" },
                         [
                           _c("strong", [
@@ -2761,17 +2775,18 @@ var staticRenderFns = [
         attrs: { id: "text-hero" },
       },
       [
-        _c("span", { staticClass: "d-block" }, [
-          _vm._v("Cerca i tuoi piatti preferiti"),
+        _c("span", { staticClass: "d-block line-height-small" }, [
+          _vm._v("Cerca i tuoi ristoranti preferiti"),
         ]),
         _vm._v(" "),
         _c(
           "a",
           {
-            staticClass: "btn btn-sm gr-orange text-white rounded-lg",
-            attrs: { href: "/ristoranti" },
+            staticClass:
+              "btn btn-sm gr-orange text-white rounded-lg w-25 button-hero",
+            attrs: { href: "/cerca" },
           },
-          [_vm._v("Tutti i ristoranti")]
+          [_vm._v("Cerca")]
         ),
       ]
     )
@@ -2806,14 +2821,19 @@ var staticRenderFns = [
               _c("h1", [_vm._v("Hai un ristorante?")]),
               _vm._v(" "),
               _c("h3", { staticClass: "mb-4" }, [
-                _vm._v("Scopri tutti i vantaggi della"),
-                _c("br"),
-                _vm._v("consegna a domicilio!"),
+                _vm._v(
+                  "\n                        Scopri tutti i vantaggi della consegna a domicilio!\n                    "
+                ),
               ]),
               _vm._v(" "),
-              _c("a", { staticClass: "btn gr-orange text-white w-50" }, [
-                _vm._v("Registrati"),
-              ]),
+              _c(
+                "a",
+                {
+                  staticClass: "btn gr-orange text-white w-25 button-hero",
+                  attrs: { href: "/register" },
+                },
+                [_vm._v("Registrati")]
+              ),
             ]
           ),
         ]),
@@ -2937,9 +2957,14 @@ var staticRenderFns = [
                 ),
               ]),
               _vm._v(" "),
-              _c("a", { staticClass: "btn gr-orange text-white w-50" }, [
-                _vm._v("Ordina"),
-              ]),
+              _c(
+                "a",
+                {
+                  staticClass: "btn gr-orange text-white w-50",
+                  attrs: { href: "/cerca" },
+                },
+                [_vm._v("Ordina")]
+              ),
             ]
           ),
         ]),
@@ -15252,7 +15277,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/luca/Desktop/deliveboo/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\X95\Code\deliveboo\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
