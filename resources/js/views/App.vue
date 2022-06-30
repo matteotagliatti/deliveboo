@@ -10,7 +10,7 @@
                 class="text-center my-py-13 text-white position-absolute"
             >
                 <span class="d-block line-height-small"
-                    >Cerca i tuoi piatti preferiti</span
+                    >Cerca i tuoi ristoranti preferiti</span
                 >
                 <a
                     href="/cerca"
